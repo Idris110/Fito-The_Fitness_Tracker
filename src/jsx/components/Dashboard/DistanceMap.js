@@ -66,7 +66,7 @@ const DistanceMap = () => {
                            <div className="progress" style={{ height: 9 }}>
                               <div
                                  className="progress-bar bg-warning progress-animated"
-                                 style={{ width: "55%", height: 9 }}
+                                 style={{ width: "35%", height: 9 }}
                                  role="progressbar"
                               >
                                  <span className="sr-only">55% Complete</span>
@@ -401,8 +401,8 @@ const DistanceMap = () => {
                               onClick={() => setActiveTab("running")}
                            >
                               <Link
-                                 className=" active"
-                                 className={`nav-link ${
+                                 // className=" active"
+                                 className={`active nav-link ${
                                     activeTab === "running" ? "active" : ""
                                  }`}
                                  data-toggle="tab"

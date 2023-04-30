@@ -51,9 +51,7 @@ class SideBar extends Component {
       /// Active menu
       let deshBoard = [
          "",
-         "workout-statistic",
          "workout-plan",
-         "distance-map",
          "diet-food-menu",
          "personal-record",
       ],
@@ -116,11 +114,13 @@ class SideBar extends Component {
          ],
          table = ["table-bootstrap-basic", "table-datatable-basic"];
 
+         console.log(path.slice(1));
+
       return (
          <div className="deznav">
             <PerfectScrollbar className="deznav-scroll">
                <MM className="metismenu" id="menu">
-                  <li
+                  {/* <li
                      className={`${deshBoard.includes(path.slice(1)) ? "mm-active" : ""
                         }`}
                   >
@@ -154,7 +154,109 @@ class SideBar extends Component {
                            <Link to="/personal-record">Personal Record</Link>
                         </li>
                      </ul>
+                  </li> */}
+
+
+                  <li
+                     className= {`${ (path.slice(1) === "react/" ) ? "mm-active" : ""
+                        }` }
+                  >
+                     <Link
+                        className="ai-icon"
+                        to="#"
+                        aria-expanded="false"
+                     >
+                        <i className="flaticon-381-networking"></i>
+                        <span className="nav-text">Dashboard</span>
+                     </Link>
                   </li>
+
+                  <li
+                     className= {`${ (path.slice(1) === "react/workout-plan" ) ? "mm-active" : ""
+                        }` }
+                  >
+                     <Link
+                        className="ai-icon"
+                        to="/workout-plan"
+                        aria-expanded="false"
+                     >
+                        <i className="flaticon-381-calendar-1"></i>
+                        <span className="nav-text">Workout Plan</span>
+                     </Link>
+                  </li>
+
+                  <li
+                     className= {`${ (path.slice(1) === "react/workout-statistic" ) ? "mm-active" : ""
+                        }` }
+                  >
+                     <Link
+                        className="ai-icon"
+                        to="/workout-statistic"
+                        aria-expanded="false"
+                     >
+                        <i className="flaticon-381-settings-2"></i>
+                        <span className="nav-text">Workout Statistics</span>
+                     </Link>
+                  </li>
+
+                  <li
+                     className= {`${(path.slice(1) === "react/countdown") ? "mm-active" : ""
+                        }` }
+                  >
+                     <Link
+                        className="ai-icon"
+                        to="/countdown"
+                        aria-expanded="false"
+                     >
+                        <i className="flaticon-381-heart"></i>
+                        <span className="nav-text">Start Tracking</span>
+                     </Link>
+                  </li>
+
+                  <li
+                     className= {`${ (path.slice(1) === "react/diet-food-menu" ) ? "mm-active" : ""
+                        }` }
+                  >
+                     <Link
+                        className="ai-icon"
+                        to="/diet-food-menu"
+                        aria-expanded="false"
+                     >
+                        <i className="flaticon-381-target"></i>
+                        <span className="nav-text">Diet Plan</span>
+                     </Link>
+                  </li>
+
+                  <li
+                     className= {`${(path.slice(1) === "react/personal-record") ? "mm-active" : ""
+                        }` }
+                  >
+                     <Link
+                        className="ai-icon"
+                        to="/personal-record"
+                        aria-expanded="false"
+                     >
+                        <i className="flaticon-381-calendar-2"></i>
+                        <span className="nav-text">Training history</span>
+                     </Link>
+                  </li>
+
+
+                  {/* <li
+                     className={`${widget.includes(path.slice(1)) ? "mm-active" : ""
+                        }`}
+                  >
+                     <Link
+                        className="ai-icon"
+                        to="distance-map"
+                        aria-expanded="false"
+                     >
+                        <i className="flaticon-381-settings-2"></i>
+                        <span className="nav-text">Widget</span>
+                     </Link>
+                  </li> */}
+
+
                   <li
                      className={`${app.includes(path.slice(1)) ? "mm-active" : ""
                         }`}
@@ -234,6 +336,8 @@ class SideBar extends Component {
                         </li>
                      </ul>
                   </li>
+
+
                   <li
                      className={`${charts.includes(path.slice(1)) ? "mm-active" : ""
                         }`}
@@ -363,19 +467,9 @@ class SideBar extends Component {
                         </li>
                      </ul>
                   </li>
-                  <li
-                     className={`${widget.includes(path.slice(1)) ? "mm-active" : ""
-                        }`}
-                  >
-                     <Link
-                        to="widget-basic"
-                        className="ai-icon"
-                        aria-expanded="false"
-                     >
-                        <i className="flaticon-381-settings-2"></i>
-                        <span className="nav-text">Widget</span>
-                     </Link>
-                  </li>
+
+
+
                   <li
                      className={`${forms.includes(path.slice(1)) ? "mm-active" : ""
                         }`}
@@ -497,12 +591,6 @@ class SideBar extends Component {
                   </Link>
                </div>
 
-               <div className="copyright">
-                  <p>
-                     <strong>Fito Dashboard</strong> ©All Rights Reserved
-                  </p>
-                  <p>by DexignZone</p>
-               </div>
             </PerfectScrollbar>
          </div>
       );

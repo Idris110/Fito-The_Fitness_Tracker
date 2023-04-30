@@ -102,7 +102,7 @@ const Markup = () => {
       { url: "", component: Home },
       { url: "workout-statistic", component: WorkoutStatistic },
       { url: "workout-plan", component: WorkoutPlan },
-      { url: "distance-map", component: DistanceMap },
+      { url: "countdown", component: DistanceMap },
       { url: "diet-food-menu", component: DietFoodMenu },
       { url: "personal-record", component: PersonalRecord },
       /// Bootstrap

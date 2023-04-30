@@ -6,10 +6,10 @@ const Footer = () => {
          <div className="copyright">
             <p>
                Copyright © Designed &amp; Developed by{" "}
-               <a href="http://dexignzone.com/" target="_blank">
-                  DexignZone
+               <a href="http://github.com/idris110" target="_blank">
+                  COD
                </a>{" "}
-               2020
+               2023
             </p>
          </div>
       </div>
