@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from 'react'
 import { Link } from "react-router-dom";
 //** Import Image */
 import map from "../../../images/map.png";
@@ -20,10 +21,102 @@ const ApexBar2 = loadable(() =>
 
 const DistanceMap = () => {
    const [activeTab, setActiveTab] = useState("running");
+
+   const cdMin=2, cdhr=0, T= cdMin*60+50;
+	// We need ref in this, because we are dealing
+	// with JS setInterval to keep track of it and
+	// stop it when needed
+	const Ref = useRef(null);
+
+	// The state for our timer
+	const [timer, setTimer] = useState('00:00:00');
+	const [timeUp, setTimeUp] = useState(false);
+	const [timer1, setTimer1] = useState({
+		h: '00',
+		m: '00',
+		s: '00',
+      t: 0
+	});
+
+
+	const getTimeRemaining = (e) => {
+		const total = Date.parse(e) - Date.parse(new Date());
+		const seconds = Math.floor((total / 1000) % 60);
+		const minutes = Math.floor((total / 1000 / 60) % 60);
+		const hours = Math.floor((total / 1000 / 60 / 60) % 24);
+		return {
+			total, hours, minutes, seconds
+		};
+	}
+
+
+	const startTimer = (e) => {
+		let { total, hours, minutes, seconds }
+			= getTimeRemaining(e);
+		if (total >= 0) {
+
+			// update the timer
+			// check if less than 10 then we need to
+			// add '0' at the beginning of the variable
+			setTimer(
+				(hours > 9 ? hours : '0' + hours) + ':' +
+				(minutes > 9 ? minutes : '0' + minutes) + ':'
+				+ (seconds > 9 ? seconds : '0' + seconds)
+			)
+			setTimer1({ h: (hours > 9 ? hours : '0' + hours), m: (minutes > 9 ? minutes : '0' + minutes), s: (seconds > 9 ? seconds : '0' + seconds), t: (minutes*60 + seconds) });
+            
+			if (minutes === 0 && seconds === 0) {
+				setTimeUp(true);
+			}
+		}
+	}
+
+
+	const clearTimer = (e) => {
+
+		// If you adjust it you should also need to
+		// adjust the Endtime formula we are about
+		// to code next	
+		setTimer(`${cdhr}:${cdMin}:60`);
+
+		// If you try to remove this line the
+		// updating of timer Variable will be
+		// after 1000ms or 1sec
+		if (Ref.current) clearInterval(Ref.current);
+		const id = setInterval(() => {
+			startTimer(e);
+		}, 1000)
+		Ref.current = id;
+	}
+
+	const getDeadTime = () => {
+		let deadline = new Date();
+
+		// This is where you need to adjust if
+		// you entend to add more time
+
+
+
+		deadline.setSeconds(deadline.getSeconds() + 10);
+		deadline.setMinutes(deadline.getMinutes() + cdMin);
+		deadline.setHours(deadline.getHours() + cdhr);
+		return deadline;
+	}
+
+	// We can use useEffect so that when the component
+	// mount the timer will start as soon as possible
+
+	// We put empty array to act as componentDid
+	// mount only
+	useEffect(() => {
+		clearTimer(getDeadTime());
+	}, []);
+
+
    return (
       <>
          <div className="row">
-            <div className="col-lg-6">
+            <div className="col-lg-12">
                <div className="card">
                   <div className="card-body">
                      <div className="media distance-bx align-items-center">
@@ -55,27 +148,27 @@ const DistanceMap = () => {
                                  </clipPath>
                               </defs>
                            </svg>
-                        </span>
+                        </span> 
                         <div className="media-body">
                            <h6 className="fs-18 text-black mb-3">
-                              Running
+                              Time left
                               <span className="pull-right fs-14 text-dark">
-                                 100km
+                                 {cdMin} : 00
                               </span>
                            </h6>
                            <div className="progress" style={{ height: 9 }}>
                               <div
                                  className="progress-bar bg-warning progress-animated"
-                                 style={{ width: "35%", height: 9 }}
+                                 style={{ width: `${(T-timer1.t)*100/T}%`, height: 9 }}
                                  role="progressbar"
                               >
                                  <span className="sr-only">55% Complete</span>
                                  <span className="bg-warning arrow" />
                                  <span className="font-w600 counter-bx text-black">
                                     <strong className="counter font-w600">
-                                       45
+                                    {timer1.m} : {timer1.s}
                                     </strong>
-                                    km
+                                     s
                                  </span>
                               </div>
                            </div>
@@ -84,7 +177,7 @@ const DistanceMap = () => {
                   </div>
                </div>
             </div>
-            <div className="col-lg-6">
+            {/* <div className="col-lg-6">
                <div className="card">
                   <div className="card-body">
                      <div className="media distance-bx align-items-center">
@@ -148,7 +241,7 @@ const DistanceMap = () => {
                      </div>
                   </div>
                </div>
-            </div>
+            </div> */}
             <div className="col-xl-3 col-xxl-4 col-lg-5">
                <div className="card">
                   <div className="card-header d-sm-flex d-block border-0">

@@ -163,7 +163,7 @@ class SideBar extends Component {
                   >
                      <Link
                         className="ai-icon"
-                        to="#"
+                        to="/"
                         aria-expanded="false"
                      >
                         <i className="flaticon-381-networking"></i>
@@ -194,7 +194,7 @@ class SideBar extends Component {
                         to="/workout-statistic"
                         aria-expanded="false"
                      >
-                        <i className="flaticon-381-settings-2"></i>
+                        <i className="flaticon-381-heart"></i>
                         <span className="nav-text">Workout Statistics</span>
                      </Link>
                   </li>
@@ -208,7 +208,7 @@ class SideBar extends Component {
                         to="/countdown"
                         aria-expanded="false"
                      >
-                        <i className="flaticon-381-heart"></i>
+                        <i className="flaticon-381-stopwatch"></i>
                         <span className="nav-text">Start Tracking</span>
                      </Link>
                   </li>
@@ -238,6 +238,48 @@ class SideBar extends Component {
                      >
                         <i className="flaticon-381-calendar-2"></i>
                         <span className="nav-text">Training history</span>
+                     </Link>
+                  </li>
+
+                  <li
+                     className= {`${(path.slice(1) === "react/app-calender") ? "mm-active" : ""
+                        }` }
+                  >
+                     <Link
+                        className="ai-icon"
+                        to="/app-calender"
+                        aria-expanded="false"
+                     >
+                        <i className="flaticon-381-calendar-1"></i>
+                        <span className="nav-text">Calendar</span>
+                     </Link>
+                  </li>
+
+                  <li
+                     className= {`${(path.slice(1) === "react/ecom-product-list") ? "mm-active" : ""
+                        }` }
+                  >
+                     <Link
+                        className="ai-icon"
+                        to="/ecom-product-list"
+                        aria-expanded="false"
+                     >
+                        <i className="flaticon-381-funnel"></i>
+                        <span className="nav-text">Exrecises</span>
+                     </Link>
+                  </li>
+
+                  <li
+                     className= {`${(path.slice(1) === "react/app-profile") ? "mm-active" : ""
+                        }` }
+                  >
+                     <Link
+                        className="ai-icon"
+                        to="/app-profile"
+                        aria-expanded="false"
+                     >
+                        <i className="flaticon-381-user-7"></i>
+                        <span className="nav-text">Profile</span>
                      </Link>
                   </li>
 

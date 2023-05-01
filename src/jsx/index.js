@@ -28,7 +28,7 @@ import Widget from "./pages/Widget";
 import Home from "./components/Dashboard/Home";
 import WorkoutStatistic from "./components/Dashboard/WorkoutStatistic";
 import WorkoutPlan from "./components/Dashboard/WorkoutPlan";
-import DistanceMap from "./components/Dashboard/DistanceMap";
+import DistanceMap from "./components/Dashboard/Countdown";
 import DietFoodMenu from "./components/Dashboard/DietFoodMenu";
 import PersonalRecord from "./components/Dashboard/PersonalRecord";
 

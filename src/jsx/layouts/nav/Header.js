@@ -76,7 +76,7 @@ const Header = ({ onNote, toggle, onProfile, onNotification, onBox }) => {
                            </div>
                         </div>
                      </li>
-                     <li className="nav-item dropdown notification_dropdown">
+                     {/* <li className="nav-item dropdown notification_dropdown">
                         <Link
                            className="nav-link  ai-icon"
                            to="#"
@@ -219,7 +219,7 @@ const Header = ({ onNote, toggle, onProfile, onNotification, onBox }) => {
                               <i className="ti-arrow-right" />
                            </Link>
                         </div>
-                     </li>
+                     </li> */}
                      <li className="nav-item dropdown notification_dropdown">
                         <Link
                            className="nav-link bell bell-link"
@@ -251,7 +251,7 @@ const Header = ({ onNote, toggle, onProfile, onNotification, onBox }) => {
                            </span>
                         </Link>
                      </li>
-                     <li className="nav-item dropdown notification_dropdown">
+                     {/* <li className="nav-item dropdown notification_dropdown">
                         <Link
                            className="nav-link"
                            to="#"
@@ -378,7 +378,7 @@ const Header = ({ onNote, toggle, onProfile, onNotification, onBox }) => {
                               </ul>
                            </PerfectScrollbar>
                         </div>
-                     </li>
+                     </li> */}
                      <li className="nav-item dropdown header-profile">
                         <Link
                            to="#"
