@@ -1,5 +1,8 @@
-import React from "react";
+import { createContext } from "react";
 import { Link } from "react-router-dom";
+
+
+const obj = createContext();
 
 const SingleProductList = (props) => {
    const {
@@ -13,6 +16,9 @@ const SingleProductList = (props) => {
    } = props.product;
    return (
       <div className="col-lg-12 col-xl-6">
+         <obj.Provider value={"Binod"}>
+
+         </obj.Provider>
          <div className="card">
             <div className="card-body">
                <div className="row m-b-30">
@@ -64,3 +70,4 @@ const SingleProductList = (props) => {
 };
 
 export default SingleProductList;
+export { obj };

@@ -10,31 +10,37 @@ import avatar from "../../../images/avatar/1.jpg";
 
 const Header = ({ onNote, toggle, onProfile, onNotification, onBox }) => {
    var path = window.location.pathname.split("/");
+   
    var name = path[path.length - 1].split("-");
+   if(name[0].includes("%20")){
+      name = name[0].split("%20");
+   }
+   console.log("header", name);
+
    var filterName = name.length >= 3 ? name.filter((n, i) => i > 0) : name;
    var finalName = filterName.includes("app")
       ? filterName.filter((f) => f !== "app")
       : filterName.includes("ui")
-      ? filterName.filter((f) => f !== "ui")
-      : filterName.includes("uc")
-      ? filterName.filter((f) => f !== "uc")
-      : filterName.includes("basic")
-      ? filterName.filter((f) => f !== "basic")
-      : filterName.includes("form")
-      ? filterName.filter((f) => f !== "form")
-      : filterName.includes("table")
-      ? filterName.filter((f) => f !== "table")
-      : filterName.includes("page")
-      ? filterName.filter((f) => f !== "page")
-      : filterName.includes("email")
-      ? filterName.filter((f) => f !== "email")
-      : filterName.includes("ecom")
-      ? filterName.filter((f) => f !== "ecom")
-      : filterName.includes("chart")
-      ? filterName.filter((f) => f !== "chart")
-      : filterName.includes("editor")
-      ? filterName.filter((f) => f !== "editor")
-      : filterName;
+         ? filterName.filter((f) => f !== "ui")
+         : filterName.includes("uc")
+            ? filterName.filter((f) => f !== "uc")
+            : filterName.includes("basic")
+               ? filterName.filter((f) => f !== "basic")
+               : filterName.includes("form")
+                  ? filterName.filter((f) => f !== "form")
+                  : filterName.includes("table")
+                     ? filterName.filter((f) => f !== "table")
+                     : filterName.includes("page")
+                        ? filterName.filter((f) => f !== "page")
+                        : filterName.includes("email")
+                           ? filterName.filter((f) => f !== "email")
+                           : filterName.includes("ecom")
+                              ? filterName.filter((f) => f !== "ecom")
+                              : filterName.includes("chart")
+                                 ? filterName.filter((f) => f !== "chart")
+                                 : filterName.includes("editor")
+                                    ? filterName.filter((f) => f !== "editor")
+                                    : filterName;
    return (
       <div className="header">
          <div className="header-content">
@@ -45,9 +51,11 @@ const Header = ({ onNote, toggle, onProfile, onNotification, onBox }) => {
                         className="dashboard_bar"
                         style={{ textTransform: "capitalize" }}
                      >
-                        {finalName.join(" ").length === 0
-                           ? "Dashboard"
-                           : finalName.join(" ")}
+                        {
+                           finalName.join(" ").length === 0
+                              ? "Dashboard"
+                              : finalName.join(" ")
+                        }
                      </div>
                   </div>
                   <ul className="navbar-nav header-right">
@@ -384,17 +392,15 @@ const Header = ({ onNote, toggle, onProfile, onNotification, onBox }) => {
                            to="#"
                            role="button"
                            data-toggle="dropdown"
-                           className={`nav-item dropdown header-profile ${
-                              toggle === "profile" ? "show" : ""
-                           }`}
+                           className={`nav-item dropdown header-profile ${toggle === "profile" ? "show" : ""
+                              }`}
                            onClick={() => onProfile()}
                         >
                            <img src={profile} width={20} alt />
                         </Link>
                         <div
-                           className={`dropdown-menu dropdown-menu-right ${
-                              toggle === "profile" ? "show" : ""
-                           }`}
+                           className={`dropdown-menu dropdown-menu-right ${toggle === "profile" ? "show" : ""
+                              }`}
                         >
                            <Link
                               to="/app-profile"

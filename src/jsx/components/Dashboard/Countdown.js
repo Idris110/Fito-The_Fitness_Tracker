@@ -1,6 +1,6 @@
 // import React, { useState } from "react";
 import React, { useState, useRef, useEffect } from 'react'
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 //** Import Image */
 import map from "../../../images/map.png";
 
@@ -22,8 +22,10 @@ const ApexBar2 = loadable(() =>
 const DistanceMap = () => {
    const [activeTab, setActiveTab] = useState("running");
 
-   const cdMin=2, cdhr=0, T= cdMin*60+50;
-	// We need ref in this, because we are dealing
+   const {type, min, sec} = useParams();
+
+   const cdMin=parseInt(min), cdhr=0, cdSec=parseInt(sec), T= cdMin*60 + 40 +cdSec;
+	// We need ref in this, because we are dealing-----------------------------------------------
 	// with JS setInterval to keep track of it and
 	// stop it when needed
 	const Ref = useRef(null);
@@ -56,8 +58,8 @@ const DistanceMap = () => {
 		if (total >= 0) {
 
 			// update the timer
-			// check if less than 10 then we need to
-			// add '0' at the beginning of the variable
+			// check if less than 10 then we need to -----------------  refresh ----------------------
+			// add '0' at the beginning of the variable----------------------------------------------------------
 			setTimer(
 				(hours > 9 ? hours : '0' + hours) + ':' +
 				(minutes > 9 ? minutes : '0' + minutes) + ':'
@@ -67,6 +69,7 @@ const DistanceMap = () => {
             
 			if (minutes === 0 && seconds === 0) {
 				setTimeUp(true);
+            window.open('http://localhost:3000/react/workout-statistic',"_self");
 			}
 		}
 	}
@@ -93,11 +96,9 @@ const DistanceMap = () => {
 		let deadline = new Date();
 
 		// This is where you need to adjust if
-		// you entend to add more time
+		// you entend to add more time------------------------------------------------
 
-
-
-		deadline.setSeconds(deadline.getSeconds() + 10);
+		deadline.setSeconds(deadline.getSeconds() + cdSec);
 		deadline.setMinutes(deadline.getMinutes() + cdMin);
 		deadline.setHours(deadline.getHours() + cdhr);
 		return deadline;
@@ -153,7 +154,7 @@ const DistanceMap = () => {
                            <h6 className="fs-18 text-black mb-3">
                               Time left
                               <span className="pull-right fs-14 text-dark">
-                                 {cdMin} : 00
+                                 {cdMin} : {cdSec}
                               </span>
                            </h6>
                            <div className="progress" style={{ height: 9 }}>
@@ -482,12 +483,12 @@ const DistanceMap = () => {
                <div className="card">
                   <div className="card-header d-sm-flex d-block pb-0 border-0">
                      <div className="mr-auto pr-3">
-                        <h4 className="text-black fs-20">Stats</h4>
+                        <h4 className="text-black fs-20">{type}</h4>
                         <p className="fs-13 mb-0">
                            Lorem ipsum dolor sit amet, consectetur
                         </p>
                      </div>
-                     <div className="card-action card-tabs style-1 mt-3 mt-sm-0 mt-3 mb-sm-0 mb-3 mt-sm-0">
+                     {/* <div className="card-action card-tabs style-1 mt-3 mt-sm-0 mt-3 mb-sm-0 mb-3 mt-sm-0">
                         <ul className="nav nav-tabs" role="tablist">
                            <li
                               className="nav-item"
@@ -580,9 +581,14 @@ const DistanceMap = () => {
                               </Link>
                            </li>
                         </ul>
-                     </div>
+                     </div> */}
                   </div>
-                  <div className="card-body pb-0">
+                     <div className="text-center">
+                  <img src="https://i.pinimg.com/originals/0f/52/d6/0f52d6c8f62e75bace5f4fe3f9480fb0.gif" width={500} alt="" />
+
+                     </div>
+                  {/* <img src="https://i.pinimg.com/originals/e3/93/d5/e393d50c6f4f5cc42d0b876f40488767.gif" alt="" /> */}
+                  {/* <div className="card-body pb-0">
                      <div className="tab-content">
                         <div
                            className={`tab-pane fade ${
@@ -603,7 +609,7 @@ const DistanceMap = () => {
                            <ApexBar2 />
                         </div>
                      </div>
-                  </div>
+                  </div> */}
                </div>
             </div>
             <div className="col-xl-12 mt-sm-0 mt-3">

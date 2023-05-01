@@ -102,7 +102,7 @@ const Markup = () => {
       { url: "", component: Home },
       { url: "workout-statistic", component: WorkoutStatistic },
       { url: "workout-plan", component: WorkoutPlan },
-      { url: "countdown", component: DistanceMap },
+      { url: "countdown/:min/:sec/:type", component: DistanceMap },
       { url: "diet-food-menu", component: DietFoodMenu },
       { url: "personal-record", component: PersonalRecord },
       /// Bootstrap
@@ -133,7 +133,7 @@ const Markup = () => {
       /// Shop
       { url: "ecom-product-grid", component: ProductGrid },
       { url: "ecom-product-list", component: ProductList },
-      { url: "ecom-product-detail", component: ProductDetail },
+      { url: "ecom-product-detail/:details", component: ProductDetail },
       { url: "ecom-product-order", component: ProductOrder },
       { url: "ecom-checkout", component: Checkout },
       { url: "ecom-invoice", component: Invoice },

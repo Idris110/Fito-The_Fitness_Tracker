@@ -1,8 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import productData from "../productData";
 import PageTitle from "../../../../layouts/PageTitle";
+// import { obj } from "../ProductList/SingleProductList";
+
+
 const ProductDetail = ({ match }) => {
+
+   const { details } = useParams();
+
    //** Dynamic Key Single Place */
    const singleProductData = productData.find((sinPl) =>
       sinPl.key === match.params.id ? match.params.id : productData[0].key
@@ -72,7 +78,9 @@ const ProductDetail = ({ match }) => {
                         <div className="col-xl-9 col-lg-6  col-md-7 col-xxl-7 col-sm-12">
                            <div className="product-detail-content">
                               <div className="new-arrival-content pr">
-                                 <h4>Solid Women's V-neck Dark T-Shirt</h4>
+                                 <h4>Solid Women's V-neck Dark T-Shirt {details}
+                                 </h4>
+
                                  <div className="star-rating mb-2 d-flex">
                                     {rating}{" "}
                                     <span className="review-text">
@@ -87,7 +95,7 @@ const ProductDetail = ({ match }) => {
                                        Write a review?
                                     </Link>
                                  </div>
-								 <p className="price">${price}</p>
+                                 <p className="price">${price}</p>
                                  <p>
                                     Availability:{" "}
                                     <span className="item">
@@ -181,7 +189,7 @@ const ProductDetail = ({ match }) => {
                                  <div className="shopping-cart mt-3">
                                     <Link
                                        className="btn btn-primary btn-lg"
-                                       to="/ecom-product-detail"
+                                       to="/ecom-product-detail/idris"
                                     >
                                        <i className="fa fa-shopping-basket mr-2"></i>
                                        Add to cart

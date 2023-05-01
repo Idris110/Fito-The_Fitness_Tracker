@@ -205,7 +205,7 @@ class SideBar extends Component {
                   >
                      <Link
                         className="ai-icon"
-                        to="/countdown"
+                        to="/countdown/2/10/Push%20Ups"
                         aria-expanded="false"
                      >
                         <i className="flaticon-381-stopwatch"></i>
