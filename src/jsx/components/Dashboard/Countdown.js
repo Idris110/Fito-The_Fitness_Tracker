@@ -6,6 +6,7 @@ import map from "../../../images/map.png";
 
 import loadable from "@loadable/component";
 import pMinDelay from "p-min-delay";
+import exData from '../AppsMenu/Shop/productData/exerciseData';
 
 import { Dropdown } from "react-bootstrap";
 
@@ -21,97 +22,110 @@ const ApexBar2 = loadable(() =>
 
 const DistanceMap = () => {
    const [activeTab, setActiveTab] = useState("running");
+   
+   const { id, type, min, sec } = useParams();
 
-   const {type, min, sec} = useParams();
+   const singleProductData = exData.find(({ key }) => key === id);
+   const {
+      key,
+      previewImg,
+      title,
+      difficulty,
+      impact,
+      calories,
+      target_muscle,
+      s_des,
+   } = singleProductData;
 
-   const cdMin=parseInt(min), cdhr=0, cdSec=parseInt(sec), T= cdMin*60 + 40 +cdSec;
-	// We need ref in this, because we are dealing-----------------------------------------------
-	// with JS setInterval to keep track of it and
-	// stop it when needed
-	const Ref = useRef(null);
 
-	// The state for our timer
-	const [timer, setTimer] = useState('00:00:00');
-	const [timeUp, setTimeUp] = useState(false);
-	const [timer1, setTimer1] = useState({
-		h: '00',
-		m: '00',
-		s: '00',
+   const cdMin = parseInt(min), cdhr = 0, cdSec = parseInt(sec), T = cdMin * 60 + 40 + cdSec;
+   // We need ref in this, because we are dealing-----------------------------------------------
+   // with JS setInterval to keep track of it and
+   // stop it when needed
+   const Ref = useRef(null);
+
+   // The state for our timer
+   const [timer, setTimer] = useState('00:00:00');
+   const [timeUp, setTimeUp] = useState(false);
+   const [timer1, setTimer1] = useState({
+      h: '00',
+      m: '00',
+      s: '00',
       t: 0
-	});
+   });
 
 
-	const getTimeRemaining = (e) => {
-		const total = Date.parse(e) - Date.parse(new Date());
-		const seconds = Math.floor((total / 1000) % 60);
-		const minutes = Math.floor((total / 1000 / 60) % 60);
-		const hours = Math.floor((total / 1000 / 60 / 60) % 24);
-		return {
-			total, hours, minutes, seconds
-		};
-	}
+   const getTimeRemaining = (e) => {
+      const total = Date.parse(e) - Date.parse(new Date());
+      const seconds = Math.floor((total / 1000) % 60);
+      const minutes = Math.floor((total / 1000 / 60) % 60);
+      const hours = Math.floor((total / 1000 / 60 / 60) % 24);
+      return {
+         total, hours, minutes, seconds
+      };
+   }
 
 
-	const startTimer = (e) => {
-		let { total, hours, minutes, seconds }
-			= getTimeRemaining(e);
-		if (total >= 0) {
+   const startTimer = (e) => {
+      let { total, hours, minutes, seconds }
+         = getTimeRemaining(e);
+      if (total >= 0) {
 
-			// update the timer
-			// check if less than 10 then we need to -----------------  refresh ----------------------
-			// add '0' at the beginning of the variable----------------------------------------------------------
-			setTimer(
-				(hours > 9 ? hours : '0' + hours) + ':' +
-				(minutes > 9 ? minutes : '0' + minutes) + ':'
-				+ (seconds > 9 ? seconds : '0' + seconds)
-			)
-			setTimer1({ h: (hours > 9 ? hours : '0' + hours), m: (minutes > 9 ? minutes : '0' + minutes), s: (seconds > 9 ? seconds : '0' + seconds), t: (minutes*60 + seconds) });
-            
-			if (minutes === 0 && seconds === 0) {
-				setTimeUp(true);
-            window.open('http://localhost:3000/react/workout-statistic',"_self");
-			}
-		}
-	}
+         // update the timer
+         // check if less than 10 then we need to -----------------  refresh ----------------------
+         // add '0' at the beginning of the variable----------------------------------------------------------
+         setTimer(
+            (hours > 9 ? hours : '0' + hours) + ':' +
+            (minutes > 9 ? minutes : '0' + minutes) + ':'
+            + (seconds > 9 ? seconds : '0' + seconds)
+         )
+         setTimer1({ h: (hours > 9 ? hours : '0' + hours), m: (minutes > 9 ? minutes : '0' + minutes), s: (seconds > 9 ? seconds : '0' + seconds), t: (minutes * 60 + seconds) });
+
+         if (minutes === 0 && seconds === 0) {
+            setTimeUp(true);
+            window.open('http://localhost:3000/react/workout-statistic', "_self");
+         }
+      }
+   }
 
 
-	const clearTimer = (e) => {
+   const clearTimer = (e) => {
 
-		// If you adjust it you should also need to
-		// adjust the Endtime formula we are about
-		// to code next	
-		setTimer(`${cdhr}:${cdMin}:60`);
+      // If you adjust it you should also need to
+      // adjust the Endtime formula we are about
+      // to code next	
+      setTimer(`${cdhr}:${cdMin}:60`);
 
-		// If you try to remove this line the
-		// updating of timer Variable will be
-		// after 1000ms or 1sec
-		if (Ref.current) clearInterval(Ref.current);
-		const id = setInterval(() => {
-			startTimer(e);
-		}, 1000)
-		Ref.current = id;
-	}
+      // If you try to remove this line the
+      // updating of timer Variable will be
+      // after 1000ms or 1sec
+      if (Ref.current) clearInterval(Ref.current);
+      const id = setInterval(() => {
+         startTimer(e);
+      }, 1000)
+      Ref.current = id;
+   }
 
-	const getDeadTime = () => {
-		let deadline = new Date();
+   const getDeadTime = () => {
+      let deadline = new Date();
 
-		// This is where you need to adjust if
-		// you entend to add more time------------------------------------------------
+      // This is where you need to adjust if
+      // you entend to add more time------------------------------------------------
 
-		deadline.setSeconds(deadline.getSeconds() + cdSec);
-		deadline.setMinutes(deadline.getMinutes() + cdMin);
-		deadline.setHours(deadline.getHours() + cdhr);
-		return deadline;
-	}
+      deadline.setSeconds(deadline.getSeconds() + cdSec);
+      deadline.setMinutes(deadline.getMinutes() + cdMin);
+      deadline.setHours(deadline.getHours() + cdhr);
+      return deadline;
+   }
 
-	// We can use useEffect so that when the component
-	// mount the timer will start as soon as possible
+   // We can use useEffect so that when the component
+   // mount the timer will start as soon as possible
 
-	// We put empty array to act as componentDid
-	// mount only
-	useEffect(() => {
-		clearTimer(getDeadTime());
-	}, []);
+   // We put empty array to act as componentDid
+   // mount only
+   useEffect(() => {
+      clearTimer(getDeadTime());
+   }, []);
 
 
    return (
@@ -149,7 +163,7 @@ const DistanceMap = () => {
                                  </clipPath>
                               </defs>
                            </svg>
-                        </span> 
+                        </span>
                         <div className="media-body">
                            <h6 className="fs-18 text-black mb-3">
                               Time left
@@ -160,16 +174,16 @@ const DistanceMap = () => {
                            <div className="progress" style={{ height: 9 }}>
                               <div
                                  className="progress-bar bg-warning progress-animated"
-                                 style={{ width: `${(T-timer1.t)*100/T}%`, height: 9 }}
+                                 style={{ width: `${(T - timer1.t) * 100 / T}%`, height: 9 }}
                                  role="progressbar"
                               >
                                  <span className="sr-only">55% Complete</span>
                                  <span className="bg-warning arrow" />
                                  <span className="font-w600 counter-bx text-black">
                                     <strong className="counter font-w600">
-                                    {timer1.m} : {timer1.s}
+                                       {timer1.m} : {timer1.s}
                                     </strong>
-                                     s
+                                    s
                                  </span>
                               </div>
                            </div>
@@ -249,7 +263,7 @@ const DistanceMap = () => {
                      <div className="mr-auto pr-3">
                         <h4 className="text-black fs-20">Recent Activities</h4>
                         <p className="fs-13 mb-0">
-                           Lorem ipsum dolor sit amet, consectetur
+                           Check out your previous workout
                         </p>
                      </div>
                   </div>
@@ -485,131 +499,16 @@ const DistanceMap = () => {
                      <div className="mr-auto pr-3">
                         <h4 className="text-black fs-20">{type}</h4>
                         <p className="fs-13 mb-0">
-                           Lorem ipsum dolor sit amet, consectetur
+                           {s_des}
                         </p>
                      </div>
-                     {/* <div className="card-action card-tabs style-1 mt-3 mt-sm-0 mt-3 mb-sm-0 mb-3 mt-sm-0">
-                        <ul className="nav nav-tabs" role="tablist">
-                           <li
-                              className="nav-item"
-                              onClick={() => setActiveTab("running")}
-                           >
-                              <Link
-                                 // className=" active"
-                                 className={`active nav-link ${
-                                    activeTab === "running" ? "active" : ""
-                                 }`}
-                                 data-toggle="tab"
-                                 to="#Running"
-                                 role="tab"
-                              >
-                                 <svg
-                                    className="mr-2"
-                                    width={24}
-                                    height={24}
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                 >
-                                    <g clipPath="url(#clip7)">
-                                       <path
-                                          d="M0.988957 17.0741C0.328275 17.2007 -0.104585 17.8386 0.0219823 18.4993C0.133362 19.0815 0.644694 19.4865 1.21678 19.4865C1.29272 19.4865 1.37119 19.4789 1.44713 19.4637L6.4592 18.5018C6.74524 18.4461 7.00091 18.2917 7.18316 18.0639L9.33481 15.3503L8.61593 14.9832C8.08435 14.7149 7.71475 14.2289 7.58818 13.6391L5.55804 16.1983L0.988957 17.0741Z"
-                                          fill="#FF9432"
-                                       />
-                                       <path
-                                          d="M18.84 6.49306C20.3135 6.49306 21.508 5.29854 21.508 3.82502C21.508 2.3515 20.3135 1.15698 18.84 1.15698C17.3665 1.15698 16.1719 2.3515 16.1719 3.82502C16.1719 5.29854 17.3665 6.49306 18.84 6.49306Z"
-                                          fill="#FF9432"
-                                       />
-                                       <path
-                                          d="M13.0179 3.15677C12.7369 2.86819 12.4762 2.75428 12.1902 2.75428C12.0864 2.75428 11.9826 2.76947 11.8712 2.79479L7.29203 3.88073C6.6592 4.03008 6.26937 4.66545 6.41872 5.29576C6.54782 5.83746 7.02877 6.20198 7.56289 6.20198C7.65404 6.20198 7.74514 6.19185 7.8363 6.16907L11.7371 5.24513C11.9902 5.52611 13.2584 6.90063 13.4888 7.14364C11.8763 8.87002 10.2639 10.5939 8.65137 12.3202C8.62605 12.3481 8.60329 12.3759 8.58049 12.4038C8.10966 13.0037 8.25397 13.9454 8.96275 14.3023L13.9064 16.826L11.3397 20.985C10.9878 21.5571 11.165 22.3064 11.7371 22.6608C11.9371 22.7848 12.1573 22.843 12.375 22.843C12.7825 22.843 13.1824 22.638 13.4128 22.2659L16.6732 16.983C16.8529 16.6919 16.901 16.34 16.8074 16.0135C16.7137 15.6844 16.4884 15.411 16.1821 15.2566L12.8331 13.553L16.3543 9.78636L19.0122 12.0393C19.2324 12.2266 19.5032 12.3177 19.7716 12.3177C20.0601 12.3177 20.3487 12.2114 20.574 12.0038L23.6243 9.16112C24.1002 8.71814 24.128 7.97392 23.685 7.49803C23.4521 7.24996 23.1383 7.12339 22.8244 7.12339C22.5383 7.12339 22.2497 7.22717 22.0245 7.43727L19.7412 9.56107C19.7386 9.56361 14.0178 4.18196 13.0179 3.15677Z"
-                                          fill="#FF9432"
-                                       />
-                                    </g>
-                                    <defs>
-                                       <clipPath id="clip7">
-                                          <rect
-                                             width={24}
-                                             height={24}
-                                             fill="white"
-                                          />
-                                       </clipPath>
-                                    </defs>
-                                 </svg>
-                                 Running
-                                 <span className="bg-warning" />
-                              </Link>
-                           </li>
-                           <li
-                              className="nav-item"
-                              onClick={() => setActiveTab("cycling")}
-                           >
-                              <Link
-                                 data-toggle="tab"
-                                 to="#Cycling"
-                                 role="tab"
-                                 className={`nav-link ${
-                                    activeTab === "cycling" ? "active" : ""
-                                 }`}
-                              >
-                                 <svg
-                                    className="mr-2"
-                                    width={24}
-                                    height={24}
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                 >
-                                    <path
-                                       d="M10.8586 5.22593L5.87121 10.5542C5.50758 11.0845 5.64394 11.8067 6.17172 12.1678L11.1945 15.6098V18.9557C11.1945 19.5921 11.6995 20.1249 12.3359 20.1376C12.9874 20.1476 13.5177 19.6249 13.5177 18.976V15.0012C13.5177 14.6173 13.3283 14.2588 13.0126 14.0441L9.79041 11.8345L12.5025 8.9583L13.8914 12.1224C14.0758 12.5441 14.4949 12.8169 14.9546 12.8169H19.1844C19.8207 12.8169 20.3536 12.3118 20.3662 11.6755C20.3763 11.0239 19.8536 10.4936 19.2046 10.4936H15.7172C15.2576 9.44818 14.7677 8.41282 14.3409 7.35222C14.1237 6.81686 14.0025 6.58454 13.6036 6.21585C13.5227 6.1401 12.9596 5.62495 12.4571 5.16535C11.995 4.74613 11.2828 4.77391 10.8586 5.22593Z"
-                                       fill="#1EA7C5"
-                                    />
-                                    <path
-                                       d="M15.6162 5.80675C17.0861 5.80675 18.2778 4.61511 18.2778 3.14514C18.2778 1.67517 17.0861 0.483521 15.6162 0.483521C14.1462 0.483521 12.9545 1.67517 12.9545 3.14514C12.9545 4.61511 14.1462 5.80675 15.6162 5.80675Z"
-                                       fill="#1EA7C5"
-                                    />
-                                    <path
-                                       d="M4.89899 23.5163C7.60463 23.5163 9.79798 21.323 9.79798 18.6174C9.79798 15.9117 7.60463 13.7184 4.89899 13.7184C2.19335 13.7184 0 15.9117 0 18.6174C0 21.323 2.19335 23.5163 4.89899 23.5163Z"
-                                       fill="#1EA7C5"
-                                    />
-                                    <path
-                                       d="M19.101 23.5163C21.8066 23.5163 24 21.323 24 18.6174C24 15.9117 21.8066 13.7184 19.101 13.7184C16.3954 13.7184 14.202 15.9117 14.202 18.6174C14.202 21.323 16.3954 23.5163 19.101 23.5163Z"
-                                       fill="#1EA7C5"
-                                    />
-                                 </svg>
-                                 Cycling
-                                 <span className="bg-info" />
-                              </Link>
-                           </li>
-                        </ul>
-                     </div> */}
-                  </div>
-                     <div className="text-center">
-                  <img src="https://i.pinimg.com/originals/0f/52/d6/0f52d6c8f62e75bace5f4fe3f9480fb0.gif" width={500} alt="" />
 
-                     </div>
-                  {/* <img src="https://i.pinimg.com/originals/e3/93/d5/e393d50c6f4f5cc42d0b876f40488767.gif" alt="" /> */}
-                  {/* <div className="card-body pb-0">
-                     <div className="tab-content">
-                        <div
-                           className={`tab-pane fade ${
-                              activeTab === "running" ? "show active" : ""
-                           }`}
-                           id="Running"
-                           role="tabpanel"
-                        >
-                           <ApexBar columnWidth="80%"  />
-                        </div>
-                        <div
-                           className={`tab-pane fade ${
-                              activeTab === "cycling" ? "show active" : ""
-                           }`}
-                           id="Cycling"
-                           role="tabpanel"
-                        >
-                           <ApexBar2 />
-                        </div>
-                     </div>
-                  </div> */}
+                  </div>
+                  <div className="text-center">
+                     <img src={previewImg} width={500} alt="" />
+
+                  </div>
+
                </div>
             </div>
             <div className="col-xl-12 mt-sm-0 mt-3">

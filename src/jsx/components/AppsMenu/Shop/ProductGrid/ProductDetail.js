@@ -10,13 +10,6 @@ const ProductDetail = ({ match }) => {
 
    const { details } = useParams();
 
-   //** Dynamic Key Single Place */
-   // const singleProductData = exData.find((sinPl) =>
-   //    {
-   //       console.log(sinPl.key, " k, p ", details);
-   //       return sinPl.key === details ? details : exData[0].key
-   //    }
-   // );
    const singleProductData = exData.find(({ key }) => key === details);
    const {
       key,
@@ -30,6 +23,7 @@ const ProductDetail = ({ match }) => {
    } = singleProductData;
 
    const [min, setMin] = useState(1);
+   const [sec, setSec] = useState(0);
 
    return (
       <div className="h-80">
@@ -102,6 +96,7 @@ const ProductDetail = ({ match }) => {
                                           name="num"
                                           className="form-control input-btn input-number"
                                           defaultValue="1"
+                                          onChange={(e)=>(setMin(e.target.value))}
                                        />
                                     </div>
 
@@ -113,6 +108,7 @@ const ProductDetail = ({ match }) => {
                                           name="num"
                                           className="form-control input-btn input-number"
                                           defaultValue="00"
+                                          onChange={(e)=>(setSec(e.target.value))}
                                        />
                                     </div>
                                  </div>
@@ -120,7 +116,7 @@ const ProductDetail = ({ match }) => {
                                  <div className="shopping-cart mt-4 mb-4">
                                     <Link
                                        className="btn btn-primary btn-lg"
-                                       to="/countdown/2/10/Push%20Ups"
+                                       to={`/countdown/${key}/${min}/${sec}/${title}`}
                                     >
                                        {/* <i className="fa fa-shopping-basket mr-2"></i> */}
                                        Start Now
