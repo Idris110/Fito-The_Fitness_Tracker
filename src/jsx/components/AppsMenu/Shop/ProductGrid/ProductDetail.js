@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import productData from "../productData";
+// import productData from "../productData";
+import exData from "../productData/exerciseData";
 import PageTitle from "../../../../layouts/PageTitle";
 // import { obj } from "../ProductList/SingleProductList";
 
@@ -10,24 +11,29 @@ const ProductDetail = ({ match }) => {
    const { details } = useParams();
 
    //** Dynamic Key Single Place */
-   const singleProductData = productData.find((sinPl) =>
-      sinPl.key === match.params.id ? match.params.id : productData[0].key
-   );
+   // const singleProductData = exData.find((sinPl) =>
+   //    {
+   //       console.log(sinPl.key, " k, p ", details);
+   //       return sinPl.key === details ? details : exData[0].key
+   //    }
+   // );
+   const singleProductData = exData.find(({ key }) => key === details);
    const {
+      key,
       previewImg,
-      rating,
-      price,
-      availability,
-      productCode,
-      brand,
-      tags,
-      des,
-      imageList,
+      title,
+      difficulty,
+      impact,
+      calories,
+      target_muscle,
+      l_des,
    } = singleProductData;
+
+   const [min, setMin] = useState(1);
 
    return (
       <div className="h-80">
-         <PageTitle activeMenu="Blank" motherMenu="Layout" />
+         <PageTitle activeMenu={title} motherMenu="Exercise" />
          <div className="row">
             <div className="col-lg-12">
                <div className="card">
@@ -47,154 +53,81 @@ const ProductDetail = ({ match }) => {
                                  />
                               </div>
                            </div>
-                           <div className="tab-slide-content new-arrival-product mb-4 mb-xl-0">
-                              <ul
-                                 className="nav slide-item-list mt-3"
-                                 role="tablist"
-                              >
-                                 {imageList.map((images, i) => (
-                                    <li
-                                       role="presentation"
-                                       className="show"
-                                       key={i}
-                                    >
-                                       <Link
-                                          to="#first"
-                                          role="tab"
-                                          data-toggle="tab"
-                                       >
-                                          <img
-                                             className="img-fluid"
-                                             src={images}
-                                             alt=""
-                                             width="50"
-                                          />
-                                       </Link>
-                                    </li>
-                                 ))}
-                              </ul>
-                           </div>
+
                         </div>
                         <div className="col-xl-9 col-lg-6  col-md-7 col-xxl-7 col-sm-12">
                            <div className="product-detail-content">
                               <div className="new-arrival-content pr">
-                                 <h4>Solid Women's V-neck Dark T-Shirt {details}
-                                 </h4>
+                                 <h2>{title}
+                                 </h2>
 
-                                 <div className="star-rating mb-2 d-flex">
-                                    {rating}{" "}
+                                 <div className="star-rating mt-4 mb-2 d-flex">
+                                    {difficulty}{" "}
                                     <span className="review-text">
                                        {" "}
-                                       (34 reviews) /{" "}
+                                       Difficulty
                                     </span>
                                     <Link
                                        className="product-review"
                                        to="/ecom-product-detail"
                                     >
-                                       {" "}
-                                       Write a review?
                                     </Link>
                                  </div>
-                                 <p className="price">${price}</p>
+                                 <p className="price mb-4">{calories}cal</p>
+
                                  <p>
-                                    Availability:{" "}
+                                    Impact:{" "}
                                     <span className="item">
-                                       {availability}{" "}
+                                       {impact}{" "}
                                        <i className="fa fa-shopping-basket"></i>
                                     </span>
                                  </p>
-                                 <p>
-                                    Product code:{" "}
-                                    <span className="item">{productCode}</span>
-                                 </p>
-                                 <p>
-                                    Brand: <span className="item">{brand}</span>
-                                 </p>
-                                 <p>
-                                    Product tags:&nbsp;&nbsp;
-                                    {tags.map((tag, i) => (
+
+                                 <p className="mt-2 mb-4">
+                                    Target muscle:&nbsp;&nbsp;
+                                    {target_muscle.map((target_muscle, i) => (
                                        <span
                                           className="badge badge-success light mr-1"
                                           key={i}
                                        >
-                                          {tag}
+                                          {target_muscle}
                                        </span>
                                     ))}
                                  </p>
-                                 <p className="text-content">{des}</p>
-                                 <div className="filtaring-area my-3">
-                                    <div className="size-filter">
-                                       <h4 className="m-b-15">Select size</h4>
+                                 <div class="ml-0 row">
+                                    <div className="col-sm-2 px-0 m-0 mx-1">
+                                       <p>Minutes</p>
+                                       <input
+                                          type="number"
+                                          name="num"
+                                          className="form-control input-btn input-number"
+                                          defaultValue="1"
+                                       />
+                                    </div>
 
-                                       <div
-                                          className="btn-group"
-                                          data-toggle="buttons"
-                                       >
-                                          <label className="btn btn-outline-primary light btn-sm">
-                                             <input
-                                                type="radio"
-                                                className="position-absolute invisible"
-                                                name="options"
-                                                id="option5"
-                                             />
-                                             XS
-                                          </label>
-                                          <label className="btn btn-outline-primary light btn-sm">
-                                             <input
-                                                type="radio"
-                                                className="position-absolute invisible"
-                                                name="options"
-                                                id="option1"
-                                             />
-                                             SM
-                                          </label>
-                                          <label className="btn btn-outline-primary light btn-sm">
-                                             <input
-                                                type="radio"
-                                                className="position-absolute invisible"
-                                                name="options"
-                                                id="option2"
-                                             />
-                                             MD
-                                          </label>
-                                          <label className="btn btn-outline-primary light btn-sm">
-                                             <input
-                                                type="radio"
-                                                className="position-absolute invisible"
-                                                name="options"
-                                                id="option3"
-                                             />
-                                             LG
-                                          </label>
-                                          <label className="btn btn-outline-primary light btn-sm">
-                                             <input
-                                                type="radio"
-                                                className="position-absolute invisible"
-                                                name="options"
-                                                id="option4"
-                                             />
-                                             XL
-                                          </label>
-                                       </div>
+                                    <div className="col-sm-2 px-0 m-0">
+
+                                       <p>Seconds</p>
+                                       <input
+                                          type="number"
+                                          name="num"
+                                          className="form-control input-btn input-number"
+                                          defaultValue="00"
+                                       />
                                     </div>
                                  </div>
-                                 <div className="col-2 px-0">
-                                    <input
-                                       type="number"
-                                       name="num"
-                                       className="form-control input-btn input-number"
-                                       defaultValue="1"
-                                    />
-                                 </div>
-                                 <div className="shopping-cart mt-3">
+
+                                 <div className="shopping-cart mt-4 mb-4">
                                     <Link
                                        className="btn btn-primary btn-lg"
-                                       to="/ecom-product-detail/idris"
+                                       to="/countdown/2/10/Push%20Ups"
                                     >
-                                       <i className="fa fa-shopping-basket mr-2"></i>
-                                       Add to cart
+                                       {/* <i className="fa fa-shopping-basket mr-2"></i> */}
+                                       Start Now
+                                       <i className="flaticon-381-stopwatch ml-2"></i>
                                     </Link>
                                  </div>
+                                 <p className="text-content">{l_des}</p>
                               </div>
                            </div>
                         </div>

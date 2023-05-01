@@ -1,24 +1,21 @@
-import { createContext } from "react";
+// import { createContext } from "react";
 import { Link } from "react-router-dom";
 
 
-const obj = createContext();
-
 const SingleProductList = (props) => {
+
    const {
+      key,
       previewImg,
-      price,
-      rating,
-      availability,
-      productCode,
-      brand,
-      des,
+      title,
+      difficulty,
+      impact,
+      calories,
+      s_des,
    } = props.product;
+
    return (
       <div className="col-lg-12 col-xl-6">
-         <obj.Provider value={"Binod"}>
-
-         </obj.Provider>
          <div className="card">
             <div className="card-body">
                <div className="row m-b-30">
@@ -32,33 +29,23 @@ const SingleProductList = (props) => {
                   <div className="col-md-7 col-xxl-12">
                      <div className="new-arrival-content position-relative">
                         <h4>
-                           <Link to="/ecom-product-detail">
-                              Solid Women's V-neck Dark T-Shirt
+                           <Link to={`/ecom-product-detail/${key}`}>
+                              {title}
                            </Link>
                         </h4>
 						<div className="comment-review star-rating">
-                           {rating}
-                           <span className="review-text">(34 reviews) / </span>
-                           <Link className="product-review" to="#">
-                              Write a review?
-                           </Link>
-							<p className="price">${price}</p>
+                           <span className="review-text">Difficulty </span>
+                           {difficulty}
+							<p className="price">{calories}cal</p>
                         </div>
                         <p>
-                           Availability:{" "}
+                           Impact :{" "}
                            <span className="item">
-                              {availability}{" "}
+                              {impact}{" "}
                               <i className="fa fa-check-circle text-success"></i>
                            </span>
                         </p>
-                        <p>
-                           Product code:{" "}
-                           <span className="item">{productCode}</span>
-                        </p>
-                        <p>
-                           Brand: <span className="item">{brand}</span>
-                        </p>
-                        <p className="text-content">{des}</p>
+                        <p className="text-content">{s_des}</p>
                         
                      </div>
                   </div>
@@ -70,4 +57,3 @@ const SingleProductList = (props) => {
 };
 
 export default SingleProductList;
-export { obj };
