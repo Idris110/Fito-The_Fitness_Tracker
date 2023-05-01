@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+// 1.639 TBW , 511,594 F
 
 /// Components
 import Markup from "./jsx";
@@ -24,5 +25,4 @@ const App = ({ width }) => {
       </Fragment>
    );
 };
-
 export default withResizeDetector(App);
