@@ -43,7 +43,7 @@ const PersonalRecord = () => {
                               </defs>
                            </svg>
                         </span>
-                        <h4 className="fs-20 text-white mb-0">Running</h4>
+                        <h4 className="fs-20 text-white mb-0">Cardio</h4>
                      </div>
                      <Link
                         to="/personal-record"
@@ -94,14 +94,14 @@ const PersonalRecord = () => {
                                        Sunday
                                     </p>
                                     <span className="fs-14">
-                                       September 2, 2020
+                                       April 2, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -116,14 +116,14 @@ const PersonalRecord = () => {
                                        Monday
                                     </p>
                                     <span className="fs-14">
-                                       September 3, 2020
+                                       April 3, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -138,14 +138,14 @@ const PersonalRecord = () => {
                                        Tuesday
                                     </p>
                                     <span className="fs-14">
-                                       September 4, 2020
+                                       April 4, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -160,14 +160,14 @@ const PersonalRecord = () => {
                                        Wednesday
                                     </p>
                                     <span className="fs-14">
-                                       September 5, 2020
+                                       April 5, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -182,14 +182,14 @@ const PersonalRecord = () => {
                                        Thursday
                                     </p>
                                     <span className="fs-14">
-                                       September 8, 2020
+                                       April 8, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -204,14 +204,14 @@ const PersonalRecord = () => {
                                        Friday
                                     </p>
                                     <span className="fs-14">
-                                       September 7, 2020
+                                       April 7, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -226,14 +226,14 @@ const PersonalRecord = () => {
                                        Saturday
                                     </p>
                                     <span className="fs-14">
-                                       September 8, 2020
+                                       April 8, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -248,14 +248,14 @@ const PersonalRecord = () => {
                                        Sunday
                                     </p>
                                     <span className="fs-14">
-                                       September 9, 2020
+                                       April 9, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -300,7 +300,7 @@ const PersonalRecord = () => {
                               />
                            </svg>
                         </span>
-                        <h4 className="fs-20 text-white mb-0">Cycling</h4>
+                        <h4 className="fs-20 text-white mb-0">Aerobic</h4>
                      </div>
                      <Link
                         to="/personal-record"
@@ -351,14 +351,14 @@ const PersonalRecord = () => {
                                        Sunday
                                     </p>
                                     <span className="fs-14">
-                                       September 2, 2020
+                                       April 2, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -373,14 +373,14 @@ const PersonalRecord = () => {
                                        Monday
                                     </p>
                                     <span className="fs-14">
-                                       September 3, 2020
+                                       April 3, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -395,14 +395,14 @@ const PersonalRecord = () => {
                                        Tuesday
                                     </p>
                                     <span className="fs-14">
-                                       September 4, 2020
+                                       April 4, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -417,14 +417,14 @@ const PersonalRecord = () => {
                                        Wednesday
                                     </p>
                                     <span className="fs-14">
-                                       September 5, 2020
+                                       April 5, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -439,14 +439,14 @@ const PersonalRecord = () => {
                                        Thursday
                                     </p>
                                     <span className="fs-14">
-                                       September 8, 2020
+                                       April 8, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -461,14 +461,14 @@ const PersonalRecord = () => {
                                        Friday
                                     </p>
                                     <span className="fs-14">
-                                       September 7, 2020
+                                       April 7, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -483,14 +483,14 @@ const PersonalRecord = () => {
                                        Saturday
                                     </p>
                                     <span className="fs-14">
-                                       September 8, 2020
+                                       April 8, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -505,14 +505,14 @@ const PersonalRecord = () => {
                                        Sunday
                                     </p>
                                     <span className="fs-14">
-                                       September 9, 2020
+                                       April 9, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -619,14 +619,14 @@ const PersonalRecord = () => {
                                        Sunday
                                     </p>
                                     <span className="fs-14">
-                                       September 2, 2020
+                                       April 2, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -641,14 +641,14 @@ const PersonalRecord = () => {
                                        Monday
                                     </p>
                                     <span className="fs-14">
-                                       September 3, 2020
+                                       April 3, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -663,14 +663,14 @@ const PersonalRecord = () => {
                                        Tuesday
                                     </p>
                                     <span className="fs-14">
-                                       September 4, 2020
+                                       April 4, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -685,14 +685,14 @@ const PersonalRecord = () => {
                                        Wednesday
                                     </p>
                                     <span className="fs-14">
-                                       September 5, 2020
+                                       April 5, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -707,14 +707,14 @@ const PersonalRecord = () => {
                                        Thursday
                                     </p>
                                     <span className="fs-14">
-                                       September 8, 2020
+                                       April 8, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -729,14 +729,14 @@ const PersonalRecord = () => {
                                        Friday
                                     </p>
                                     <span className="fs-14">
-                                       September 7, 2020
+                                       April 7, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -751,14 +751,14 @@ const PersonalRecord = () => {
                                        Saturday
                                     </p>
                                     <span className="fs-14">
-                                       September 8, 2020
+                                       April 8, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
@@ -773,14 +773,14 @@ const PersonalRecord = () => {
                                        Sunday
                                     </p>
                                     <span className="fs-14">
-                                       September 9, 2020
+                                       April 9, 2023
                                     </span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
-                                       14,2 Km
+                                       14,2 sets
                                     </p>
-                                    <span className="fs-14">Target 15Km</span>
+                                    <span className="fs-14">Target 15sets</span>
                                  </td>
                                  <td>
                                     <p className="text-black mb-1 font-w600">
