@@ -21,7 +21,9 @@ const RoutineExer = () => {
          <div className="mr-auto pr-3 mb-4">
             <h4 className="text-black fs-20">{name} recommended routine</h4>
             <p className="fs-13 mb-0 text-black">
-               Select any of these routines according to your needs
+               This is a {name} routine package, contains {filList.length} exercises,
+               <br />
+               The exercises are as follows :
             </p>
          </div>
 
