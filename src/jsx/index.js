@@ -28,6 +28,7 @@ import Widget from "./pages/Widget";
 import Home from "./components/Dashboard/Home";
 import WorkoutStatistic from "./components/Dashboard/WorkoutStatistic";
 import WorkoutPlan from "./components/Dashboard/WorkoutPlan";
+import RotineCounter from "./components/Dashboard/RoutineCounter";
 import DistanceMap from "./components/Dashboard/Countdown";
 import DietFoodMenu from "./components/Dashboard/DietFoodMenu";
 import PersonalRecord from "./components/Dashboard/PersonalRecord";
@@ -62,6 +63,7 @@ import PostDetails from "./components/AppsMenu/AppProfile/PostDetails";
 /// Product List
 import ProductGrid from "./components/AppsMenu/Shop/ProductGrid/ProductGrid";
 import ProductList from "./components/AppsMenu/Shop/ProductList/ProductList";
+import RoutineExer from "./components/AppsMenu/Shop/ProductList/RoutineExer";
 import ProductDetail from "./components/AppsMenu/Shop/ProductGrid/ProductDetail";
 import Checkout from "./components/AppsMenu/Shop/Checkout/Checkout";
 import Invoice from "./components/AppsMenu/Shop/Invoice/Invoice";
@@ -103,6 +105,7 @@ const Markup = () => {
       { url: "workout-statistic", component: WorkoutStatistic },
       { url: "workout-plan", component: WorkoutPlan },
       { url: "countdown/:id/:min/:sec/:type", component: DistanceMap },
+      { url: "routine-countdown/:id/:min/:sec/:name", component: RotineCounter },
       { url: "diet-food-menu", component: DietFoodMenu },
       { url: "personal-record", component: PersonalRecord },
       /// Bootstrap
@@ -133,6 +136,7 @@ const Markup = () => {
       /// Shop
       { url: "ecom-product-grid", component: ProductGrid },
       { url: "ecom-product-list", component: ProductList },
+      { url: "routines/:exer/:name", component: RoutineExer },
       { url: "ecom-product-detail/:details", component: ProductDetail },
       { url: "ecom-product-order", component: ProductOrder },
       { url: "ecom-checkout", component: Checkout },

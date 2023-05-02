@@ -291,6 +291,8 @@ const Statistic = () => {
                         </div>
                      </div>
                   </div>
+
+                  
                   <div className="col-xl-12 col-md-6">
                      <div className="card">
                         <div className="card-header flex-wrap border-0 pb-0">

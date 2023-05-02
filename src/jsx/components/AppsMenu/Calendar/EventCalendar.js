@@ -22,11 +22,149 @@ class EventCalendar extends Component {
          },
       ],
       events: [
-         { title: "Event 1", id: "1" },
-         { title: "Event 2", id: "2" },
-         { title: "Event 3", id: "3" },
-         { title: "Event 4", id: "4" },
-         { title: "Event 5", id: "5" },
+         {
+            key: "102",
+            previewImg: "https://images.squarespace-cdn.com/content/v1/54f9e84de4b0d13f30bba4cb/1530743652042-8AW6T0MPM6Q0JYEV6AO9/image-asset.gif",
+            title: "Squat",
+            impact: "beginner",
+            calories: "760",
+            target_muscle: ["bones", "back", "legs", "quads"],
+            s_des:
+                "Squats are a lower body exercise that involves bending at the knees and hips to lower and raise the body.",
+    
+            l_des:
+                "Squats are a type of strength training exercise that primarily targets the muscles in the lower body, including the quadriceps, hamstrings, and glutes. To perform a squat, one stands with their feet shoulder-width apart, then lowers their body by bending at the knees and hips until their thighs are parallel to the ground, then stands back up.",
+        },
+    
+    
+        {
+            key: "104",
+            previewImg: "https://www.inspireusafoundation.org/wp-content/uploads/2022/11/pull-up.gif",
+            title: "Pull Ups",
+            impact: "beginner",
+            calories: "450",
+            target_muscle: ["bones", "back", "legs", "quads"],
+            s_des:
+                "Squats are a lower body exercise that involves bending at the knees and hips to lower and raise the body.",
+    
+            l_des:
+                "Squats are a type of strength training exercise that primarily targets the muscles in the lower body, including the quadriceps, hamstrings, and glutes. To perform a squat, one stands with their feet shoulder-width apart, then lowers their body by bending at the knees and hips until their thighs are parallel to the ground, then stands back up.",
+        },
+    
+        {
+            key: "105",
+            previewImg: "https://www.inspireusafoundation.org/wp-content/uploads/2022/03/barbell-full-squat.gif",
+            title: "Lifting",
+            impact: "beginner",
+            calories: "450",
+            target_muscle: ["bones", "back", "legs", "quads"],
+            s_des:
+                "Squats are a lower body exercise that involves bending at the knees and hips to lower and raise the body.",
+    
+            l_des:
+                "Squats are a type of strength training exercise that primarily targets the muscles in the lower body, including the quadriceps, hamstrings, and glutes. To perform a squat, one stands with their feet shoulder-width apart, then lowers their body by bending at the knees and hips until their thighs are parallel to the ground, then stands back up.",
+        },
+    
+        {
+            key: "103",
+            previewImg: "https://i.pinimg.com/originals/e3/93/d5/e393d50c6f4f5cc42d0b876f40488767.gif",
+            title: "Push Ups",
+            impact: "beginner",
+            calories: "300",
+            target_muscle: ["bones", "back", "legs", "quads"],
+            s_des:
+                "Squats are a lower body exercise that involves bending at the knees and hips to lower and raise the body.",
+    
+            l_des:
+                "Squats are a type of strength training exercise that primarily targets the muscles in the lower body, including the quadriceps, hamstrings, and glutes. To perform a squat, one stands with their feet shoulder-width apart, then lowers their body by bending at the knees and hips until their thighs are parallel to the ground, then stands back up.",
+        },
+    
+    
+        {
+            key: "106",
+            previewImg: "https://i.pinimg.com/originals/0f/52/d6/0f52d6c8f62e75bace5f4fe3f9480fb0.gif",
+            title: "Situps",
+            impact: "beginner",
+            calories: "50",
+            target_muscle: ["bones", "back", "legs", "quads"],
+            s_des:
+                "Squats are a lower body exercise that involves bending at the knees and hips to lower and raise the body.",
+    
+            l_des:
+                "Squats are a type of strength training exercise that primarily targets the muscles in the lower body, including the quadriceps, hamstrings, and glutes. To perform a squat, one stands with their feet shoulder-width apart, then lowers their body by bending at the knees and hips until their thighs are parallel to the ground, then stands back up.",
+        },
+    
+    
+        {
+            key: "109",
+            previewImg: "https://i.pinimg.com/originals/81/f1/23/81f1230ab56427e0bb86e2b3c2c6cb6f.gif",
+            title: "Deadlifts",
+            impact: "beginner",
+            calories: "500",
+            target_muscle: ["bones", "back", "legs", "quads"],
+            s_des:
+                "Squats are a lower body exercise that involves bending at the knees and hips to lower and raise the body.",
+    
+            l_des:
+                "Squats are a type of strength training exercise that primarily targets the muscles in the lower body, including the quadriceps, hamstrings, and glutes. To perform a squat, one stands with their feet shoulder-width apart, then lowers their body by bending at the knees and hips until their thighs are parallel to the ground, then stands back up.",
+        },
+    
+        {
+            key: "108",
+            previewImg: "https://thumbs.gfycat.com/OpulentZanyBumblebee-size_restricted.gif",
+            title: "Plank",
+            impact: "beginner",
+            calories: "50",
+            target_muscle: ["bones", "back", "legs", "quads"],
+            s_des:
+                "Squats are a lower body exercise that involves bending at the knees and hips to lower and raise the body.",
+    
+            l_des:
+                "Squats are a type of strength training exercise that primarily targets the muscles in the lower body, including the quadriceps, hamstrings, and glutes. To perform a squat, one stands with their feet shoulder-width apart, then lowers their body by bending at the knees and hips until their thighs are parallel to the ground, then stands back up.",
+        },
+    
+        {
+            key: "107",
+            previewImg: "https://media.tenor.com/fWiC9Ze5eUMAAAAC/lunges-exercise.gif",
+            title: "Lunges",
+            impact: "beginner",
+            calories: "50",
+            target_muscle: ["bones", "back", "legs", "quads"],
+            s_des:
+                "Squats are a lower body exercise that involves bending at the knees and hips to lower and raise the body.",
+    
+            l_des:
+                "Squats are a type of strength training exercise that primarily targets the muscles in the lower body, including the quadriceps, hamstrings, and glutes. To perform a squat, one stands with their feet shoulder-width apart, then lowers their body by bending at the knees and hips until their thighs are parallel to the ground, then stands back up.",
+        },
+    
+    
+        {
+            key: "111",
+            previewImg: "https://i.pinimg.com/originals/0f/52/d6/0f52d6c8f62e75bace5f4fe3f9480fb0.gif",
+            title: "Bench Press",
+            impact: "beginner",
+            calories: "50",
+            target_muscle: ["bones", "back", "legs", "quads"],
+            s_des:
+                "Squats are a lower body exercise that involves bending at the knees and hips to lower and raise the body.",
+    
+            l_des:
+                "Squats are a type of strength training exercise that primarily targets the muscles in the lower body, including the quadriceps, hamstrings, and glutes. To perform a squat, one stands with their feet shoulder-width apart, then lowers their body by bending at the knees and hips until their thighs are parallel to the ground, then stands back up.",
+        },
+    
+        {
+            key: "110",
+            previewImg: "https://www.inspireusafoundation.org/wp-content/uploads/2022/03/barbell-full-squat.gif",
+            title: "Burpee",
+            impact: "beginner",
+            calories: "50",
+            target_muscle: ["bones", "back", "legs", "quads"],
+            s_des:
+                "Squats are a lower body exercise that involves bending at the knees and hips to lower and raise the body.",
+    
+            l_des:
+                "Squats are a type of strength training exercise that primarily targets the muscles in the lower body, including the quadriceps, hamstrings, and glutes. To perform a squat, one stands with their feet shoulder-width apart, then lowers their body by bending at the knees and hips until their thighs are parallel to the ground, then stands back up.",
+        },
       ],
    };
 
@@ -99,14 +237,14 @@ class EventCalendar extends Component {
 							<h4 className="text-black fs-20 mb-0">Events</h4>
 						</div>
 						<div className="card-body" id="external-events">
-							{this.state.events.map((event) => (
+							{this.state.events.map((event,i) => (
 								<div
 								   className="fc-event mt-0 ml-0 mb-2 btn btn-block btn-primary"
 								   title={event.title}
-								   data={event.id}
-								   key={event.id}
+								   data={event.key}
+								   key={event.key}
 								>
-								   {event.title}
+								  {i+1}. {event.title}
 								</div>
 							))}
 						</div>

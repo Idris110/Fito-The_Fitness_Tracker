@@ -10,129 +10,20 @@ const WorkoutPlan = () => {
    return (
       <React.Fragment>
          <div className="row">
-            <div className="col-xl-3 col-xxl-4">
-               <div className="row">
-                  <div className="col-xl-12">
-                     <div className="card flex-xl-column flex-sm-row flex-column">
-                        <div className="card-body border-bottom pb-4 p-2 event-calender col-md-6 col-lg-6 col-lg-12">
-                           <Calendar onChange={onChange} value={value} />
-                        </div>
-                        <div className="card-body col-md-6 col-lg-6 col-lg-12">
-                           <h6 className="fs-16 text-black mb-4">
-                              Next week plan
-                           </h6>
-                           <div className="d-flex mb-4 align-items-center">
-                              <span className="date-icon mr-3">3</span>
-                              <div>
-                                 <h6 className="fs-16">
-                                    <Link to="/workout-statistic" className="text-black">
-                                       Cardio Exercise
-                                    </Link>
-                                 </h6>
-                                 <span>12 Sets | 16mins</span>
-                              </div>
-                           </div>
-                           <div className="d-flex mb-4 align-items-center">
-                              <span className="date-icon mr-3">5</span>
-                              <div>
-                                 <h6 className="fs-16">
-                                    <Link to="/workout-statistic" className="text-black">
-                                       Cycling Routine
-                                    </Link>
-                                 </h6>
-                                 <span>20Km target distances</span>
-                              </div>
-                           </div>
-                           <div className="d-flex mb-4 align-items-center">
-                              <span className="date-icon mr-3">16</span>
-                              <div>
-                                 <h6 className="fs-16">
-                                    <Link to="/workout-statistic" className="text-black">
-                                       Cycling Routine
-                                    </Link>
-                                 </h6>
-                                 <span>20Km target distances</span>
-                              </div>
-                           </div>
-                           <Button
-                              as="a"
-                              variant="outline-primary"
-                              data-toggle="modal"
-                              data-target="#addNewPlan"
-                              className=" rounded"
-                              onClick={() => setAddPlan(true)}
-                           >
-                              Add New Plan
-                           </Button>
-                           {/* Modal */}
-                           <Modal show={addPlan} className="fade">
-                              <div className="modal-content">
-                                 <Modal.Header>
-                                    <Modal.Title>Add New Plan</Modal.Title>
-                                    <Button
-                                       variant=""
-                                       onClick={() => setAddPlan(false)}
-                                       className="close"
-                                    >
-                                       <span>×</span>
-                                    </Button>
-                                 </Modal.Header>
-                                 <Modal.Body>
-                                    <form
-                                       onSubmit={(e) => {
-                                          e.preventDefault();
-                                          setAddPlan(false);
-                                       }}
-                                    >
-                                       <div className="form-group">
-                                          <label>Running</label>
-                                          <input
-                                             type="text"
-                                             className="form-control"
-                                             placeholder="Km"
-                                          />
-                                       </div>
-                                       <div className="form-group">
-                                          <label>Cycling</label>
-                                          <input
-                                             type="text"
-                                             className="form-control"
-                                             placeholder="Km"
-                                          />
-                                       </div>
-                                       <div className="form-group">
-                                          <label>Yoga</label>
-                                          <input
-                                             type="text"
-                                             className="form-control"
-                                             placeholder="hr"
-                                          />
-                                       </div>
-                                       <button className="btn btn-primary">
-                                          Submit
-                                       </button>
-                                    </form>
-                                 </Modal.Body>
-                              </div>
-                           </Modal>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div className="col-xl-9 col-xxl-8">
+
+            <div className="w-100">
                <div className="row">
                   <div className="col-xl-12">
                      <div className="card plan-list">
                         <div className="card-header d-sm-flex d-block pb-0 border-0">
                            <div className="mr-auto pr-3">
-                              <h4 className="text-black fs-20">Plan List</h4>
+                              <h4 className="text-black fs-20">Recommended Routines</h4>
                               <p className="fs-13 mb-0 text-black">
-                                 Lorem ipsum dolor sit amet, consectetur
+                                 Select any of these routines according to your needs
                               </p>
                            </div>
                            <Link
-                              to="/workout-statistic"
+                              to="/routines/107"
                               className="btn rounded text-black border border-light mr-4"
                            >
                               <svg
@@ -156,26 +47,28 @@ const WorkoutPlan = () => {
                                  as="button"
                                  className="btn rounded border text-black border-light dropdown-toggle"
                               >
-                                 Unfinished
+                                 All
                               </Dropdown.Toggle>
                               <Dropdown.Menu className="dropdown-menu-right">
-                                 <Dropdown.Item>Link 1</Dropdown.Item>
-                                 <Dropdown.Item>Link 2</Dropdown.Item>
-                                 <Dropdown.Item>Link 3</Dropdown.Item>
+                                 <Dropdown.Item>Cardiovascular</Dropdown.Item>
+                                 <Dropdown.Item>Aerobics</Dropdown.Item>
+                                 <Dropdown.Item>Running</Dropdown.Item>
                               </Dropdown.Menu>
                            </Dropdown>
                         </div>
                         <div className="card-body">
+
+                           {/* ------------------------------------------------------------------------------------------ */}
                            <div className="d-flex px-3 pt-3 list-row flex-wrap align-items-center mb-2">
                               <div className="list-icon mr-3 mb-3">
                                  <p className="fs-24 text-primary mb-0 mt-2">
                                     3
                                  </p>
-                                 <span className="fs-14 text-primary">Sun</span>
+                                 <span className="fs-14 text-primary">Exer</span>
                               </div>
                               <div className="info mb-3">
                                  <h4 className="fs-20 ">
-                                    <Link to="/workout-statistic" className="text-black">
+                                    <Link to="/routines/104,106/Routine Cardio Burn Workout" className="text-black">
                                        Routine Cardio Burn Workout
                                     </Link>
                                  </h4>
@@ -219,59 +112,31 @@ const WorkoutPlan = () => {
                                        </clipPath>
                                     </defs>
                                  </svg>
-                                 <span className="text-info ml-2">Cycling</span>
+                                 <span className="text-info ml-2">Cardio</span>
                               </div>
                               <Link
-                                 to="/workout-plan"
+                                 to="/routine-countdown/104,106/20/0/Cardio Routine"
                                  className="btn mb-3 btn-outline-primary rounded mr-3"
                               >
                                  <i className="las la-caret-right scale-2 mr-3" />
                                  Start Workout
                               </Link>
-                              <Dropdown className="dropdown mb-3">
-                                 <Dropdown.Toggle
-                                    as="button"
-                                    variant=""
-                                    className="btn rounded border-light icon-false"
-                                 >
-                                    <svg
-                                       width={6}
-                                       height={26}
-                                       viewBox="0 0 6 26"
-                                       fill="none"
-                                       xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                       <path
-                                          d="M6 3C6 4.65685 4.65685 6 3 6C1.34315 6 0 4.65685 0 3C0 1.34315 1.34315 0 3 0C4.65685 0 6 1.34315 6 3Z"
-                                          fill="#585858"
-                                       />
-                                       <path
-                                          d="M6 13C6 14.6569 4.65685 16 3 16C1.34315 16 0 14.6569 0 13C0 11.3431 1.34315 10 3 10C4.65685 10 6 11.3431 6 13Z"
-                                          fill="#585858"
-                                       />
-                                       <path
-                                          d="M6 23C6 24.6569 4.65685 26 3 26C1.34315 26 0 24.6569 0 23C0 21.3431 1.34315 20 3 20C4.65685 20 6 21.3431 6 23Z"
-                                          fill="#585858"
-                                       />
-                                    </svg>
-                                 </Dropdown.Toggle>
-                                 <Dropdown.Menu className="dropdown-menu-right">
-                                    <Dropdown.Item>Edit</Dropdown.Item>
-                                    <Dropdown.Item>Delete</Dropdown.Item>
-                                 </Dropdown.Menu>
-                              </Dropdown>
+
                            </div>
+
+
+                           {/* ------------------------------------------------------------------------------------------ */}
                            <div className="d-flex px-3 pt-3 list-row flex-wrap align-items-center mb-2">
                               <div className="list-icon mr-3 mb-3">
                                  <p className="fs-24 text-primary mb-0 mt-2">
                                     4
                                  </p>
-                                 <span className="fs-14 text-primary">Mon</span>
+                                 <span className="fs-14 text-primary">Exer</span>
                               </div>
                               <div className="info mb-3">
                                  <h4 className="fs-20">
-                                    <Link to="/workout-statistic" className="text-black">
-                                       Weekly Routine Running
+                                    <Link to="/routines/108,106,103,102/Routine Strength Training" className="text-black">
+                                       Routine Strength Training
                                     </Link>
                                  </h4>
                                  <span className="text-danger font-w600">
@@ -311,168 +176,37 @@ const WorkoutPlan = () => {
                                     </defs>
                                  </svg>
                                  <span className="text-warning ml-2">
-                                    Running
+                                    Strength
                                  </span>
                               </div>
                               <Link
-                                 to="/workout-plan"
+                                 to="/routine-countdown/102,106,108,103/20/0/Routine Strength"
                                  className="btn btn-outline-primary rounded mr-3 mb-3"
                               >
                                  <i className="las la-caret-right scale-2 mr-3" />
                                  Start Workout
                               </Link>
-                              <Dropdown className="dropdown mb-3">
-                                 <Dropdown.Toggle
-                                    as="button"
-                                    variant=""
-                                    className="btn rounded border-light icon-false"
-                                 >
-                                    <svg
-                                       width={6}
-                                       height={26}
-                                       viewBox="0 0 6 26"
-                                       fill="none"
-                                       xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                       <path
-                                          d="M6 3C6 4.65685 4.65685 6 3 6C1.34315 6 0 4.65685 0 3C0 1.34315 1.34315 0 3 0C4.65685 0 6 1.34315 6 3Z"
-                                          fill="#585858"
-                                       />
-                                       <path
-                                          d="M6 13C6 14.6569 4.65685 16 3 16C1.34315 16 0 14.6569 0 13C0 11.3431 1.34315 10 3 10C4.65685 10 6 11.3431 6 13Z"
-                                          fill="#585858"
-                                       />
-                                       <path
-                                          d="M6 23C6 24.6569 4.65685 26 3 26C1.34315 26 0 24.6569 0 23C0 21.3431 1.34315 20 3 20C4.65685 20 6 21.3431 6 23Z"
-                                          fill="#585858"
-                                       />
-                                    </svg>
-                                 </Dropdown.Toggle>
-                                 <Dropdown.Menu className="dropdown-menu-right">
-                                    <Dropdown.Item>Edit</Dropdown.Item>
-                                    <Dropdown.Item>Delete</Dropdown.Item>
-                                 </Dropdown.Menu>
-                              </Dropdown>
+
                            </div>
+
+
+                           {/* ------------------------------------------------------------------------------------------ */}
                            <div className="d-flex px-3 pt-3 list-row flex-wrap align-items-center mb-2">
                               <div className="list-icon mr-3 mb-3">
                                  <p className="fs-24 text-primary mb-0 mt-2">
-                                    5
+                                    2
                                  </p>
-                                 <span className="fs-14 text-primary">Tue</span>
+                                 <span className="fs-14 text-primary">Exer</span>
                               </div>
                               <div className="info mb-3">
                                  <h4 className="fs-20 ">
-                                    <Link to="/workout-statistic" className="text-black">
-                                       Total Body Yoga Workout
-                                    </Link>{" "}
-                                 </h4>
-                                 <span className="text-warning font-w600">
-                                    On Progress
-                                 </span>
-                              </div>
-                              <div className="d-flex mr-auto pl-3 mb-3 pr-3 align-items-center">
-                                 <svg
-                                    width={24}
-                                    height={24}
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                 >
-                                    <g clipPath="url(#clip3)">
-                                       <path
-                                          d="M12 5.9999C13.6568 5.9999 14.9999 4.65677 14.9999 2.99995C14.9999 1.34312 13.6568 1.61033e-07 12 1.41496e-07C10.3431 1.21959e-07 9.00001 1.34312 9.00001 2.99995C9.00001 4.65677 10.3431 5.9999 12 5.9999Z"
-                                          fill="#C046D3"
-                                       />
-                                       <path
-                                          d="M17.8307 21.8297L14.1363 23.2153L15.9735 23.9042C16.7642 24.1978 17.6173 23.791 17.9048 23.0261C18.0579 22.618 18.0126 22.1905 17.8307 21.8297Z"
-                                          fill="#C046D3"
-                                       />
-                                       <path
-                                          d="M5.02699 16.5949C4.25285 16.3078 3.38711 16.6974 3.09565 17.473C2.80488 18.2486 3.19821 19.1128 3.97375 19.4043L5.59202 20.0111L9.86434 18.4088L5.02699 16.5949Z"
-                                          fill="#C046D3"
-                                       />
-                                       <path
-                                          d="M20.9047 17.473C20.6132 16.6974 19.7475 16.3078 18.9734 16.5949L6.97366 21.0948C6.19803 21.3863 5.80475 22.2505 6.09551 23.0262C6.38299 23.7908 7.23593 24.198 8.02685 23.9043L20.0266 19.4044C20.8023 19.1129 21.1956 18.2487 20.9047 17.473Z"
-                                          fill="#C046D3"
-                                       />
-                                       <path
-                                          d="M22.5 11.9998L18.9273 11.9998L16.3419 6.82899C16.0732 6.29213 15.5267 5.98627 14.9634 5.99991L12 5.9999L9.03685 5.99991C8.47364 5.98627 7.92779 6.29217 7.65849 6.82899L5.0731 11.9998L1.50044 11.9998C0.672112 11.9998 0.000488132 12.6714 0.000488122 13.4997C0.000488112 14.328 0.672112 14.9997 1.50044 14.9997L6.00034 14.9997C6.56869 14.9997 7.08797 14.6789 7.34208 14.1706L9.00024 10.8543L9.00024 16.483L12.0001 17.6079L15.0001 16.4827L15.0001 10.8543L16.6583 14.1706C16.9124 14.6789 17.4317 14.9997 18 14.9997L22.4999 14.9997C23.3283 14.9997 23.9999 14.328 23.9999 13.4997C23.9999 12.6714 23.3283 11.9998 22.5 11.9998Z"
-                                          fill="#C046D3"
-                                       />
-                                    </g>
-                                    <defs>
-                                       <clipPath id="clip3">
-                                          <rect
-                                             width={24}
-                                             height={24}
-                                             fill="white"
-                                          />
-                                       </clipPath>
-                                    </defs>
-                                 </svg>
-                                 <span className="text-secondary ml-2">
-                                    Yoga
-                                 </span>
-                              </div>
-                              <Link
-                                 to="/workout-plan"
-                                 className="mb-3 btn btn-primary rounded mr-3"
-                              >
-                                 <i className="las la-stop scale-2 mr-3" />
-                                 Set Finish
-                              </Link>
-                              <Dropdown className="dropdown mb-3">
-                                 <Dropdown.Toggle
-                                    as="button"
-                                    variant=""
-                                    className="btn rounded border-light icon-false"
-                                 >
-                                    <svg
-                                       width={6}
-                                       height={26}
-                                       viewBox="0 0 6 26"
-                                       fill="none"
-                                       xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                       <path
-                                          d="M6 3C6 4.65685 4.65685 6 3 6C1.34315 6 0 4.65685 0 3C0 1.34315 1.34315 0 3 0C4.65685 0 6 1.34315 6 3Z"
-                                          fill="#585858"
-                                       />
-                                       <path
-                                          d="M6 13C6 14.6569 4.65685 16 3 16C1.34315 16 0 14.6569 0 13C0 11.3431 1.34315 10 3 10C4.65685 10 6 11.3431 6 13Z"
-                                          fill="#585858"
-                                       />
-                                       <path
-                                          d="M6 23C6 24.6569 4.65685 26 3 26C1.34315 26 0 24.6569 0 23C0 21.3431 1.34315 20 3 20C4.65685 20 6 21.3431 6 23Z"
-                                          fill="#585858"
-                                       />
-                                    </svg>
-                                 </Dropdown.Toggle>
-                                 <Dropdown.Menu className="dropdown-menu-right">
-                                    <Dropdown.Item>Edit</Dropdown.Item>
-                                    <Dropdown.Item>Delete</Dropdown.Item>
-                                 </Dropdown.Menu>
-                              </Dropdown>
-                           </div>
-                           <div className="d-flex px-3 pt-3 list-row flex-wrap align-items-center mb-2">
-                              <div className="list-icon mr-3 mb-3">
-                                 <p className="fs-24 text-black mb-0 mt-2">
-                                    28
-                                 </p>
-                                 <span className="fs-14 text-black">Fri</span>
-                              </div>
-                              <div className="info mb-3">
-                                 <h4 className="fs-20 ">
-                                    <Link to="/workout-statistic" className="text-black">
-                                       Weekly Routine Cycling
+                                    <Link to="/routines/107,105/Aerobic Workout" className="text-black">
+                                       Aerobic Workout
                                     </Link>
                                  </h4>
-                                 <span className="text-primary font-w600">
-                                    FINISHED
+                                 <span className="text-danger font-w600">
+                                    UNFINISHED
                                  </span>
-                                 <span className="pl-3 pr-3">34Km</span>
-                                 <span>00:23:45”</span>
                               </div>
                               <div className="d-flex mb-3 mr-auto pl-3 pr-3 align-items-center">
                                  <svg
@@ -510,59 +244,37 @@ const WorkoutPlan = () => {
                                        </clipPath>
                                     </defs>
                                  </svg>
-                                 <span className="text-info ml-2">Cycling</span>
+                                 <span className="text-info ml-2">Aerobics</span>
                               </div>
-                              <Dropdown className="dropdown mb-3">
-                                 <Dropdown.Toggle
-                                    as="button"
-                                    variant=""
-                                    className="btn rounded border-light icon-false"
-                                 >
-                                    <svg
-                                       width={6}
-                                       height={26}
-                                       viewBox="0 0 6 26"
-                                       fill="none"
-                                       xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                       <path
-                                          d="M6 3C6 4.65685 4.65685 6 3 6C1.34315 6 0 4.65685 0 3C0 1.34315 1.34315 0 3 0C4.65685 0 6 1.34315 6 3Z"
-                                          fill="#585858"
-                                       />
-                                       <path
-                                          d="M6 13C6 14.6569 4.65685 16 3 16C1.34315 16 0 14.6569 0 13C0 11.3431 1.34315 10 3 10C4.65685 10 6 11.3431 6 13Z"
-                                          fill="#585858"
-                                       />
-                                       <path
-                                          d="M6 23C6 24.6569 4.65685 26 3 26C1.34315 26 0 24.6569 0 23C0 21.3431 1.34315 20 3 20C4.65685 20 6 21.3431 6 23Z"
-                                          fill="#585858"
-                                       />
-                                    </svg>
-                                 </Dropdown.Toggle>
-                                 <Dropdown.Menu className="dropdown-menu-right">
-                                    <Dropdown.Item>Edit</Dropdown.Item>
-                                    <Dropdown.Item>Delete</Dropdown.Item>
-                                 </Dropdown.Menu>
-                              </Dropdown>
+
+                              <Link
+                                 to="/routine-countdown/105,107/20/0/Aerobic Workout"
+                                 className="btn btn-outline-primary rounded mr-3 mb-3"
+                              >
+                                 <i className="las la-caret-right scale-2 mr-3" />
+                                 Start Workout
+                              </Link>
                            </div>
+
+                           {/* ------------------------------------------------------------------------------------------ */}
                            <div className="d-flex px-3 pt-3 list-row flex-wrap align-items-center mb-2">
                               <div className="list-icon mr-3 mb-3">
                                  <p className="fs-24 text-black mb-0 mt-2">
-                                    21
+                                    5
                                  </p>
-                                 <span className="fs-14 text-black">Tue</span>
+                                 <span className="fs-14 text-black">Exer</span>
                               </div>
                               <div className="info mb-3">
                                  <h4 className="fs-20 ">
-                                    <Link to="/workout-statistic" className="text-black">
-                                       2020 Runner Event Workout
+                                    <Link to="/routines/107" className="text-black">
+                                       Flexibility and Mobility Training
                                     </Link>
                                  </h4>
                                  <span className="text-primary font-w600">
                                     FINISHED
                                  </span>
-                                 <span className="pl-3 pr-3">34Km</span>
-                                 <span>00:23:45”</span>
+                                 {/* <span className="pl-3 pr-3">34Km</span> */}
+                                 <span> 00:23:45”</span>
                               </div>
                               <div className="d-flex mb-3 mr-auto pl-3 pr-3 align-items-center">
                                  <svg
@@ -605,52 +317,23 @@ const WorkoutPlan = () => {
                                     </defs>
                                  </svg>
                                  <span className="text-secondary ml-2">
-                                    Yoga
+                                    Flexibility
                                  </span>
                               </div>
-                              <Dropdown className="dropdown mb-3">
-                                 <Dropdown.Toggle
-                                    as="button"
-                                    variant=""
-                                    className="btn rounded border-light icon-false"
-                                 >
-                                    <svg
-                                       width={6}
-                                       height={26}
-                                       viewBox="0 0 6 26"
-                                       fill="none"
-                                       xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                       <path
-                                          d="M6 3C6 4.65685 4.65685 6 3 6C1.34315 6 0 4.65685 0 3C0 1.34315 1.34315 0 3 0C4.65685 0 6 1.34315 6 3Z"
-                                          fill="#585858"
-                                       />
-                                       <path
-                                          d="M6 13C6 14.6569 4.65685 16 3 16C1.34315 16 0 14.6569 0 13C0 11.3431 1.34315 10 3 10C4.65685 10 6 11.3431 6 13Z"
-                                          fill="#585858"
-                                       />
-                                       <path
-                                          d="M6 23C6 24.6569 4.65685 26 3 26C1.34315 26 0 24.6569 0 23C0 21.3431 1.34315 20 3 20C4.65685 20 6 21.3431 6 23Z"
-                                          fill="#585858"
-                                       />
-                                    </svg>
-                                 </Dropdown.Toggle>
-                                 <Dropdown.Menu className="dropdown-menu-right">
-                                    <Dropdown.Item>Edit</Dropdown.Item>
-                                    <Dropdown.Item>Delete</Dropdown.Item>
-                                 </Dropdown.Menu>
-                              </Dropdown>
+
                            </div>
+
+                           {/* ------------------------------------------------------------------------------------------ */}
                            <div className="d-flex px-3 pt-3 list-row flex-wrap align-items-center mb-2">
                               <div className="list-icon mr-3 mb-3">
                                  <p className="fs-24 text-black mb-0 mt-2">
-                                    18
+                                    1
                                  </p>
                                  <span className="fs-14 text-black">Sat</span>
                               </div>
                               <div className="info mb-3">
                                  <h4 className="fs-20 ">
-                                    <Link to="/workout-statistic" className="text-black">
+                                    <Link to="/routines/107" className="text-black">
                                        Daily Running Workout
                                     </Link>
                                  </h4>
@@ -658,7 +341,7 @@ const WorkoutPlan = () => {
                                     FINISHED
                                  </span>
                                  <span className="pl-3 pr-3">34Km</span>
-                                 <span>00:23:45”</span>
+                                 <span> 00:23:45”</span>
                               </div>
                               <div className="d-flex mb-3 mr-auto pl-3 pr-3 align-items-center">
                                  <svg
@@ -701,41 +384,10 @@ const WorkoutPlan = () => {
                                     </defs>
                                  </svg>
                                  <span className="text-secondary ml-2">
-                                    Yoga
+                                    Running
                                  </span>
                               </div>
-                              <Dropdown className="dropdown mb-3">
-                                 <Dropdown.Toggle
-                                    as="button"
-                                    variant=""
-                                    className="btn rounded border-light icon-false"
-                                 >
-                                    <svg
-                                       width={6}
-                                       height={26}
-                                       viewBox="0 0 6 26"
-                                       fill="none"
-                                       xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                       <path
-                                          d="M6 3C6 4.65685 4.65685 6 3 6C1.34315 6 0 4.65685 0 3C0 1.34315 1.34315 0 3 0C4.65685 0 6 1.34315 6 3Z"
-                                          fill="#585858"
-                                       />
-                                       <path
-                                          d="M6 13C6 14.6569 4.65685 16 3 16C1.34315 16 0 14.6569 0 13C0 11.3431 1.34315 10 3 10C4.65685 10 6 11.3431 6 13Z"
-                                          fill="#585858"
-                                       />
-                                       <path
-                                          d="M6 23C6 24.6569 4.65685 26 3 26C1.34315 26 0 24.6569 0 23C0 21.3431 1.34315 20 3 20C4.65685 20 6 21.3431 6 23Z"
-                                          fill="#585858"
-                                       />
-                                    </svg>
-                                 </Dropdown.Toggle>
-                                 <Dropdown.Menu className="dropdown-menu-right">
-                                    <Dropdown.Item>Edit</Dropdown.Item>
-                                    <Dropdown.Item>Delete</Dropdown.Item>
-                                 </Dropdown.Menu>
-                              </Dropdown>
+
                            </div>
                         </div>
                      </div>

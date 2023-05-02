@@ -67,7 +67,7 @@ const ProductDetail = ({ match }) => {
                                     >
                                     </Link>
                                  </div>
-                                 <p className="price mb-4">{calories}cal</p>
+                                 <p className="price mb-4">{calories} cal/set</p>
 
                                  <p>
                                     Impact:{" "}

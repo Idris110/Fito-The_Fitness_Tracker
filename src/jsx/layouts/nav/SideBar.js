@@ -181,7 +181,7 @@ class SideBar extends Component {
                         aria-expanded="false"
                      >
                         <i className="flaticon-381-calendar-1"></i>
-                        <span className="nav-text">Workout Plan</span>
+                        <span className="nav-text">Routines</span>
                      </Link>
                   </li>
 
@@ -205,7 +205,7 @@ class SideBar extends Component {
                   >
                      <Link
                         className="ai-icon"
-                        to="/countdown/2/10/Push%20Ups"
+                        to="/countdown/103/10/0/Squat"
                         aria-expanded="false"
                      >
                         <i className="flaticon-381-stopwatch"></i>
