@@ -4,6 +4,8 @@ import ReactApexChart from "react-apexcharts";
 class ApexLine3 extends React.Component {
    constructor(props) {
       super(props);
+      var today = new Date();
+      console.log(today.getMinutes());   
 
       this.state = {
          series: [
@@ -33,18 +35,18 @@ class ApexLine3 extends React.Component {
             xaxis: {
                type: "text",
                categories: [
-                  "Jan",
-                  "Feb",
-                  "Mar",
-                  "Apr",
-                  "May",
-                  "Jun",
-                  "Jul",
-                  "Aug",
-                  "Sep",
-                  "Oct",
-                  "Nov",
-                  "Dec",
+                  today.getMinutes() + ":42",
+                  today.getMinutes() + ":48",
+                  today.getMinutes() + ":56",
+                  today.getMinutes() + ":60",
+                  today.getMinutes() + ":6",
+                  today.getMinutes() + ":12",
+                  today.getMinutes() + ":18",
+                  today.getMinutes() + ":24",
+                  today.getMinutes() + ":30",
+                  today.getMinutes() + ":36",
+                  today.getMinutes() + ":42",
+                  today.getMinutes() + ":48",
                ],
             },
             colors: ["#FF9432"],

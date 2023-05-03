@@ -68,7 +68,7 @@ const WorkoutPlan = () => {
                               </div>
                               <div className="info mb-3">
                                  <h4 className="fs-20 ">
-                                    <Link to="/routines/104,106/Routine Cardio Burn Workout" className="text-black">
+                                    <Link to="/routines/104,106,109/Routine Cardio Burn Workout" className="text-black">
                                        Routine Cardio Burn Workout
                                     </Link>
                                  </h4>
@@ -115,7 +115,7 @@ const WorkoutPlan = () => {
                                  <span className="text-info ml-2">Cardio</span>
                               </div>
                               <Link
-                                 to="/routine-countdown/104,106/20/0/Cardio Routine"
+                                 to="/routine-countdown/104,106,109/20/0/Cardio Routine"
                                  className="btn mb-3 btn-outline-primary rounded mr-3"
                               >
                                  <i className="las la-caret-right scale-2 mr-3" />

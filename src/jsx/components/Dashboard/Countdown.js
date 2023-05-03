@@ -20,6 +20,10 @@ const ApexBar2 = loadable(() =>
    pMinDelay(import("../charts/apexcharts/Bar2"), 500)
 );
 
+const ApexLine3 = loadable(() =>
+   pMinDelay(import("../charts/apexcharts/Line3"), 500)
+);
+
 const DistanceMap = () => {
    const [activeTab, setActiveTab] = useState("running");
 
@@ -49,6 +53,7 @@ const DistanceMap = () => {
          })
          .catch(error => console.error(error));
    }, []);
+
 
    const cdMin = parseInt(min), cdhr = 0, cdSec = parseInt(sec), T = cdMin * 60 + 40 + cdSec;
    // We need ref in this, because we are dealing-----------------------------------------------
@@ -463,98 +468,168 @@ const DistanceMap = () => {
             </> : <>
 
                {/* ------------------------------------------------------------------------------------------------------------------- */}
-               <div className="col-xl-12 mt-sm-0 mt-3">
-                  <h4 className="text-black fs-20">Workout Summary</h4>
-                  <p className="fs-13">{s_des}</p>
-               </div>
-               <div className="col-xl-12">
-                  <div className="map-bx">
-                     <img src={map} alt="" />
-                     <div className="map-info card mb-0">
-                        <div className="card-header border-0 pb-0 p-4">
-                           <div>
-                              <h4 className="text-black fs-20">Workout Details</h4>
-                              <p className="fs-13 mb-0">
-                                 Well done, but you can do even better
-                              </p>
+               <div className="row">
+
+                  <div className="col-xl-12 mt-sm-0 mt-3">
+                     <h4 className="text-black mb-3 fs-20">Workout Summary</h4>
+                     {/* <p className="fs-13">{filList[0].s_des}</p> */}
+                  </div>
+                  <div className="col-xl-12">
+                     <div className="map-bx">
+                        <img src={map} alt="" />
+                        <div className="map-info card mb-0">
+                           <div className="card-header border-0 pb-0 p-4">
+                              <div>
+                                 <h4 className="text-black fs-20">Workout Details</h4>
+                                 <p className="fs-13 mb-0">
+                                    Well done, but you can do even better
+                                 </p>
+                              </div>
                            </div>
-                        </div>
-                        <div className="card-body p-0">
-                           <div className="d-flex align-items-center bgl-info p-4">
-                              <svg
-                                 className="mr-3"
-                                 width={51}
-                                 height={51}
-                                 viewBox="0 0 51 51"
-                                 fill="none"
-                                 xmlns="http://www.w3.org/2000/svg"
-                              >
-                                 <rect
+                           <div className="card-body p-0">
+                              <div className="d-flex align-items-center bgl-info p-4">
+                                 <svg
+                                    className="mr-3"
                                     width={51}
                                     height={51}
-                                    rx="25.5"
-                                    fill="#1EA7C5"
-                                 />
-                                 <g clipPath="url()">
-                                    <path
-                                       d="M23.8586 19.226L18.8712 24.5542C18.5076 25.0845 18.6439 25.8068 19.1717 26.1679L24.1945 29.6098L24.1945 32.9558C24.1945 33.5921 24.6995 34.125 25.3359 34.1376C25.9874 34.1477 26.5177 33.6249 26.5177 32.976L26.5177 29.0012C26.5177 28.6174 26.3283 28.2588 26.0126 28.0442L22.7904 25.8346L25.5025 22.9583L26.8914 26.1225C27.0758 26.5442 27.4949 26.8169 27.9546 26.8169L32.1844 26.8169C32.8207 26.8169 33.3536 26.3119 33.3662 25.6755C33.3763 25.024 32.8536 24.4937 32.2046 24.4937L28.7172 24.4937C28.2576 23.4482 27.7677 22.4129 27.3409 21.3522C27.1237 20.8169 27.0025 20.5846 26.6036 20.2159C26.5227 20.1401 25.9596 19.625 25.4571 19.1654C24.995 18.7462 24.2828 18.7739 23.8586 19.226Z"
-                                       fill="white"
+                                    viewBox="0 0 51 51"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                 >
+                                    <rect
+                                       width={51}
+                                       height={51}
+                                       rx="25.5"
+                                       fill="#1EA7C5"
                                     />
-                                    <path
-                                       d="M28.6162 19.8068C30.0861 19.8068 31.2778 18.6151 31.2778 17.1452C31.2778 15.6752 30.0861 14.4836 28.6162 14.4836C27.1462 14.4836 25.9545 15.6752 25.9545 17.1452C25.9545 18.6151 27.1462 19.8068 28.6162 19.8068Z"
-                                       fill="white"
-                                    />
-                                    <path
-                                       d="M17.899 37.5164C20.6046 37.5164 22.798 35.323 22.798 32.6174C22.798 29.9117 20.6046 27.7184 17.899 27.7184C15.1934 27.7184 13 29.9117 13 32.6174C13 35.323 15.1934 37.5164 17.899 37.5164Z"
-                                       fill="white"
-                                    />
-                                    <path
-                                       d="M32.101 37.5164C34.8066 37.5164 37 35.323 37 32.6174C37 29.9118 34.8066 27.7184 32.101 27.7184C29.3954 27.7184 27.202 29.9118 27.202 32.6174C27.202 35.323 29.3954 37.5164 32.101 37.5164Z"
-                                       fill="white"
-                                    />
-                                 </g>
-                                 <defs>
-                                    <clipPath id="clip8">
-                                       <rect
-                                          width={24}
-                                          height={24}
+                                    <g clipPath="url()">
+                                       <path
+                                          d="M23.8586 19.226L18.8712 24.5542C18.5076 25.0845 18.6439 25.8068 19.1717 26.1679L24.1945 29.6098L24.1945 32.9558C24.1945 33.5921 24.6995 34.125 25.3359 34.1376C25.9874 34.1477 26.5177 33.6249 26.5177 32.976L26.5177 29.0012C26.5177 28.6174 26.3283 28.2588 26.0126 28.0442L22.7904 25.8346L25.5025 22.9583L26.8914 26.1225C27.0758 26.5442 27.4949 26.8169 27.9546 26.8169L32.1844 26.8169C32.8207 26.8169 33.3536 26.3119 33.3662 25.6755C33.3763 25.024 32.8536 24.4937 32.2046 24.4937L28.7172 24.4937C28.2576 23.4482 27.7677 22.4129 27.3409 21.3522C27.1237 20.8169 27.0025 20.5846 26.6036 20.2159C26.5227 20.1401 25.9596 19.625 25.4571 19.1654C24.995 18.7462 24.2828 18.7739 23.8586 19.226Z"
                                           fill="white"
-                                          transform="translate(13 14)"
                                        />
-                                    </clipPath>
-                                 </defs>
-                              </svg>
-                              <div>
-                                 <h6 className="fs-16 text-black mb-0">{title}</h6>
-                                 <span className="fs-12">10 sets target/day</span>
+                                       <path
+                                          d="M28.6162 19.8068C30.0861 19.8068 31.2778 18.6151 31.2778 17.1452C31.2778 15.6752 30.0861 14.4836 28.6162 14.4836C27.1462 14.4836 25.9545 15.6752 25.9545 17.1452C25.9545 18.6151 27.1462 19.8068 28.6162 19.8068Z"
+                                          fill="white"
+                                       />
+                                       <path
+                                          d="M17.899 37.5164C20.6046 37.5164 22.798 35.323 22.798 32.6174C22.798 29.9117 20.6046 27.7184 17.899 27.7184C15.1934 27.7184 13 29.9117 13 32.6174C13 35.323 15.1934 37.5164 17.899 37.5164Z"
+                                          fill="white"
+                                       />
+                                       <path
+                                          d="M32.101 37.5164C34.8066 37.5164 37 35.323 37 32.6174C37 29.9118 34.8066 27.7184 32.101 27.7184C29.3954 27.7184 27.202 29.9118 27.202 32.6174C27.202 35.323 29.3954 37.5164 32.101 37.5164Z"
+                                          fill="white"
+                                       />
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip8">
+                                          <rect
+                                             width={24}
+                                             height={24}
+                                             fill="white"
+                                             transform="translate(13 14)"
+                                          />
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                                 <div>
+                                    <h6 className="fs-16 text-black mb-0">Routine</h6>
+                                    <span className="fs-12">10 sets target/day</span>
+                                 </div>
+                              </div>
+                              <div className="d-flex flex-wrap p-4">
+                                 <div className="mr-5 mb-3">
+                                    <p className="fs-14 mb-2">Total workout</p>
+                                    <span className="fs-20 font-w500 text-black">
+                                       {sets} sets
+                                    </span>
+                                 </div>
+                                 <div className="mr-5 mb-3">
+                                    <p className="fs-14 mb-2">Time</p>
+                                    <span className="fs-20 font-w500 text-black">
+                                       00:{min}:00”
+                                    </span>
+                                 </div>
+                                 <div className="mr-5 mb-3">
+                                    <p className="fs-14 mb-2">Calories Burnt</p>
+                                    <span className="fs-20 font-w500 text-black">
+                                       {parseInt(sets) * 270}
+                                    </span>
+                                 </div>
+                                 <div className="mr-5 mb-3">
+                                    <p className="fs-14 mb-2">Achived Goal</p>
+                                    <span className="fs-20 font-w500 text-black">
+                                       {(sets >= 10) ? "Yes" : "No"}
+                                    </span>
+                                 </div>
                               </div>
                            </div>
-                           <div className="d-flex flex-wrap p-4">
-                              <div className="mr-5 mb-3">
-                                 <p className="fs-14 mb-2">Total {title}</p>
-                                 <span className="fs-20 font-w500 text-black">
-                                    {sets} sets
-                                 </span>
-                              </div>
-                              <div className="mr-5 mb-3">
-                                 <p className="fs-14 mb-2">Time</p>
-                                 <span className="fs-20 font-w500 text-black">
-                                    00:{min}:00”
-                                 </span>
-                              </div>
-                              <div className="mr-5 mb-3">
-                                 <p className="fs-14 mb-2">Calories Burnt</p>
-                                 <span className="fs-20 font-w500 text-black">
-                                    {parseInt(sets) * calories}
-                                 </span>
-                              </div>
-                              <div className="mr-5 mb-3">
-                                 <p className="fs-14 mb-2">Achived Goal</p>
-                                 <span className="fs-20 font-w500 text-black">
-                                    {(sets >= 10) ? "Yes" : "No"}
-                                 </span>
+                        </div>
+                     </div>
+                  </div>
+
+
+
+                  <div className="col-xl-12 mt-5">
+                     <div className="card">
+                        <div className="card-header d-sm-flex d-block pb-0 border-0">
+                           <div className="d-flex align-items-center">
+                              <span className="p-3 mr-3 rounded bg-warning">
+                                 <svg
+                                    width={24}
+                                    height={24}
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                 >
+                                    <g clipPath="url(#clip1)">
+                                       <path
+                                          d="M0.988957 17.0741C0.328275 17.2007 -0.104585 17.8386 0.0219823 18.4993C0.133362 19.0815 0.644694 19.4865 1.21678 19.4865C1.29272 19.4865 1.37119 19.4789 1.44713 19.4637L6.4592 18.5018C6.74524 18.4461 7.00091 18.2917 7.18316 18.0639L9.33481 15.3503L8.61593 14.9832C8.08435 14.7149 7.71475 14.2289 7.58818 13.6391L5.55804 16.1983L0.988957 17.0741Z"
+                                          fill="white"
+                                       />
+                                       <path
+                                          d="M18.84 6.49306C20.3135 6.49306 21.508 5.29854 21.508 3.82502C21.508 2.3515 20.3135 1.15698 18.84 1.15698C17.3665 1.15698 16.1719 2.3515 16.1719 3.82502C16.1719 5.29854 17.3665 6.49306 18.84 6.49306Z"
+                                          fill="white"
+                                       />
+                                       <path
+                                          d="M13.0179 3.15677C12.7369 2.86819 12.4762 2.75428 12.1902 2.75428C12.0864 2.75428 11.9826 2.76947 11.8712 2.79479L7.29203 3.88073C6.6592 4.03008 6.26937 4.66545 6.41872 5.29576C6.54782 5.83746 7.02877 6.20198 7.56289 6.20198C7.65404 6.20198 7.74514 6.19185 7.8363 6.16907L11.7371 5.24513C11.9902 5.52611 13.2584 6.90063 13.4888 7.14364C11.8763 8.87002 10.2639 10.5939 8.65137 12.3202C8.62605 12.3481 8.60329 12.3759 8.58049 12.4038C8.10966 13.0037 8.25397 13.9454 8.96275 14.3023L13.9064 16.826L11.3397 20.985C10.9878 21.5571 11.165 22.3064 11.7371 22.6608C11.9371 22.7848 12.1573 22.843 12.375 22.843C12.7825 22.843 13.1824 22.638 13.4128 22.2659L16.6732 16.983C16.8529 16.6919 16.901 16.34 16.8074 16.0135C16.7137 15.6844 16.4884 15.411 16.1821 15.2566L12.8331 13.553L16.3543 9.78636L19.0122 12.0393C19.2324 12.2266 19.5032 12.3177 19.7716 12.3177C20.0601 12.3177 20.3487 12.2114 20.574 12.0038L23.6243 9.16112C24.1002 8.71814 24.128 7.97392 23.685 7.49803C23.4521 7.24996 23.1383 7.12339 22.8244 7.12339C22.5383 7.12339 22.2497 7.22717 22.0245 7.43727L19.7412 9.56107C19.7386 9.56361 14.0178 4.18196 13.0179 3.15677Z"
+                                          fill="white"
+                                       />
+                                    </g>
+                                    <defs>
+                                       <clipPath id="clip1">
+                                          <rect
+                                             width={24}
+                                             height={24}
+                                             fill="white"
+                                          />
+                                       </clipPath>
+                                    </defs>
+                                 </svg>
+                              </span>
+                              <div className="mr-auto pr-3">
+                                 <h4 className="text-black fs-20">{title}</h4>
+                                 <p className="fs-13 mb-0 text-black">
+                                    Track your progress here
+                                 </p>
                               </div>
                            </div>
+                           <Dropdown className="dropdown mt-sm-0 mt-3">
+                              <Dropdown.Toggle
+                                 as="button"
+                                 variant=""
+                                 className="btn rounded border border-light dropdown-toggle"
+                              >
+                                 Zoom 1 
+                              </Dropdown.Toggle>
+                              <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
+                                 <Dropdown.Item>Link 1</Dropdown.Item>
+                                 <Dropdown.Item>Link 2</Dropdown.Item>
+                                 <Dropdown.Item>Link 3</Dropdown.Item>
+                              </Dropdown.Menu>
+                           </Dropdown>
+                        </div>
+                        <div className="card-body pb-0">
+                           <ApexLine3 />
                         </div>
                      </div>
                   </div>

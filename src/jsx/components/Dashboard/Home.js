@@ -312,9 +312,9 @@ const Home = () => {
                         <span className="circle bg-success" />
                      </div>
                      <h2 className="fs-24 text-black font-w600 mb-0">
-                        974 Person
+                        3 Active
                      </h2>
-                     <span className="fs-14">Total Members</span>
+                     <span className="fs-14">Personal goals</span>
                   </div>
                </div>
             </div>
@@ -325,7 +325,7 @@ const Home = () => {
                      <div className="mr-auto pr-3 mb-2">
                         <h4 className="text-black fs-20">Workout Statistic</h4>
                         <p className="fs-13 mb-2 mb-sm-0 text-black">
-                           Lorem ipsum dolor sit amet, consectetur
+                           Get a summary of the workout to track your progress
                         </p>
                      </div>
                      <div className="d-flex mr-3 mr-sm-5 mb-2">
@@ -361,7 +361,7 @@ const Home = () => {
                            <h4 className="fs-18 text-black font-w600 mb-0">
                               45%
                            </h4>
-                           <span className="fs-12 text-black">Running</span>
+                           <span className="fs-12 text-black">Cardio</span>
                         </div>
                      </div>
                      <div className="d-flex mr-3 mr-sm-5 mb-2">
@@ -394,7 +394,7 @@ const Home = () => {
                            <h4 className="fs-18 text-black font-w600 mb-0">
                               27%
                            </h4>
-                           <span className="fs-12 text-black">Cycling</span>
+                           <span className="fs-12 text-black">Aerobic</span>
                         </div>
                      </div>
                      <div className="d-flex mr-3 mr-sm-5 mb-2">
@@ -469,8 +469,7 @@ const Home = () => {
                   <div className="card-body text-center">
                      <ApexRedialBar />
                      <p className="fs-14">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do{" "}
+                        
                      </p>
                      <Link
                         to="/workout-statistic"
@@ -537,7 +536,7 @@ const Home = () => {
                            </small>
                         </div>
                         <div>
-                           <h4 className="fs-18 text-black mb-0">Running</h4>
+                           <h4 className="fs-18 text-black mb-0">Cardio</h4>
                            <span className="fs-14 text-warning">
                               52 hours, 2min
                            </span>
@@ -585,7 +584,7 @@ const Home = () => {
                            </small>
                         </div>
                         <div>
-                           <h4 className="fs-18 text-black mb-0">Cycling</h4>
+                           <h4 className="fs-18 text-black mb-0">Aerobic</h4>
                            <span className="fs-14 text-info">
                               23 hours, 45min
                            </span>
@@ -664,7 +663,7 @@ const Home = () => {
                      <div className="mr-auto pr-3">
                         <h4 className="text-black fs-20">Calories Chart</h4>
                         <p className="fs-13 mb-0 text-black">
-                           Lorem ipsum dolor sit amet, consectetur
+                           Track your calories intake and outflow to improve your diet
                         </p>
                      </div>
                      <Dropdown className="dropdown mt-sm-0 mt-3">
@@ -696,7 +695,7 @@ const Home = () => {
                               Featured Diet Menus
                            </h4>
                            <p className="fs-13 mb-0 text-black">
-                              Lorem ipsum dolor sit amet, consectetur
+                              Find your Favorite meal
                            </p>
                         </div>
                         <div className="card-action card-tabs mt-3 mt-sm-0 mt-3 mb-sm-0 mb-3 mt-sm-0">
