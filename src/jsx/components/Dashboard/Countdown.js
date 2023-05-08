@@ -39,16 +39,17 @@ const DistanceMap = () => {
       calories,
       target_muscle,
       s_des,
+      link,
    } = singleProductData;
 
    const [sets, setSets] = useState();
 
    useEffect(() => {
       console.log(sets === undefined);
-      fetch('http://localhost:8080/api')
+      fetch(link)
          .then(response => response.json())
          .then(json => {
-            console.log(json);
+            console.log("fetch ",json);
             setSets(json);
          })
          .catch(error => console.error(error));

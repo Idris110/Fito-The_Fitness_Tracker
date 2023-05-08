@@ -20,6 +20,7 @@ const ProductDetail = ({ match }) => {
       calories,
       target_muscle,
       l_des,
+      link,
    } = singleProductData;
 
    const [min, setMin] = useState(1);
