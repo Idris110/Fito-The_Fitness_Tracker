@@ -42,7 +42,7 @@ const DistanceMap = () => {
       link,
    } = singleProductData;
 
-   const [sets, setSets] = useState();
+   const [sets, setSets] = useState(18);
 
    useEffect(() => {
       console.log(sets === undefined);
