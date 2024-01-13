@@ -17,7 +17,7 @@ Fito's Routines feature takes personalized fitness to the next level by providin
 ### 3. Exercise: Interactive Support for Optimal Performance
 Kickstart your workout sessions with Fito's Exercise feature, where integrated machine learning technology provides real-time feedback on posture. Correct form, optimize your movements, and elevate your overall fitness experience with this interactive and supportive tool.\
 <br>
-https://github.com/Idris110/Fito-The_Fitness_Tracker/blob/master/src/images/readme/Fito-Dashboard-GoogleChrome.mp4
+![Exercises](./src/images/readme/exercises.gif)
 <!-- <video loop src="./src/images/readme/Fito-Dashboard-GoogleChrome.mp4">  video </video>  -->
 
 ### 4. Workout Statistics: Data-driven Progress Tracking
