@@ -11,7 +11,7 @@ The Dashboard serves as a dynamic command center, offering users a centralized s
 <br>
 <br>
 
-### 2. Routines: Tailored Workouts for Optimal Results 📆
+### 2. Routines: Tailored Workouts for Optimal Results 📊
 Fito's Routines feature takes personalized fitness to the next level by providing workout plans based on individual fitness levels and objectives. This structured approach ensures that users follow an optimized exercise regimen, promoting efficiency and effectiveness in their fitness routines.\
 <br>
 ![Routines screenshot](./src/images/readme/Screenshot%20(8).png)
